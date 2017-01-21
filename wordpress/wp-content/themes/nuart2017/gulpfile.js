@@ -33,7 +33,7 @@ gulp.task('sass', function () {
         // Sourcemamps
         //.pipe(sourcemaps.init())
         .pipe(sass(sassOptions)).on('error', notify.onError(function (error) {
-            return "Problem file -> " + error.message;
+            return 'Problem file -> ' + error.message;
         }))
 
         // Write the sourcemap
@@ -98,15 +98,15 @@ gulp.task('sprites', ['svg'], function () {
 gulp.task('sync', function() {
     browserSync.init({
         open: false,
-        proxy: "nuartaberdeen.dev"
+        proxy: 'nuartaberdeen.dev'
     });
 });
 gulp.task('syncwat', function() {
     browserSync.init({
         open: true,
-        proxy: "nuartaberdeen.tl",
+        proxy: 'nuartaberdeen.tl',
         watchTask: true,
-        browser: ["chrome"],
+        browser: ['chrome'],
         port: 3021
     });
 });
