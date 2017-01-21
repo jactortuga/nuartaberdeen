@@ -13,9 +13,7 @@
     }
 
     $(document).ready(function() {
-        $('.bxslider').bxSlider();
         app.setup.init();
-
     });
 
     $(window).resize(function() {
@@ -28,6 +26,7 @@
         setup : {
             init : function() {
                 console.log('hello world');
+                $('.bxslider').bxSlider();
             },
         },
     }
