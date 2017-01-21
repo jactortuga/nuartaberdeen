@@ -1,16 +1,16 @@
 <?
 
 function add_theme_caps(){
-  $admins = get_role('administrator');
-  $admins->add_cap('edit_artist'); 
-  $admins->add_cap('edit_artists'); 
-  $admins->add_cap('edit_other_artists'); 
-  $admins->add_cap('publish_artists'); 
-  $admins->add_cap('read_artist'); 
-  $admins->add_cap('read_private_artists'); 
-  $admins->add_cap('create_artists');
-  $admins->add_cap('delete_artist'); 
-  $admins->add_cap('delete_artists'); 
+  $editors = get_role('editor');
+  $editors->add_cap('edit_artist'); 
+  $editors->add_cap('edit_artists'); 
+  $editors->add_cap('edit_other_artists'); 
+  $editors->add_cap('publish_artists'); 
+  $editors->add_cap('read_artist'); 
+  $editors->add_cap('read_private_artists'); 
+  $editors->add_cap('create_artists');
+  $editors->add_cap('delete_artist'); 
+  $editors->add_cap('delete_artists'); 
 }
 
 add_action('admin_init', 'add_theme_caps');
@@ -29,7 +29,7 @@ function as_init() {
       'not_found'           => __('No Artists found'),
       'not_found_in_trash'  => __('No Artists found in trash'),
       ),
-    'public'                => false,
+    'public'                => true,
     'has_archive'           => false,
     'hierarchical'          => false,
     'menu_position'         => 5,

@@ -15,5 +15,6 @@ Template Name: Artists
 
 get_header(); ?>
 
+<h1>This is the artists index</h1>
 
 <? get_footer(); ?>
