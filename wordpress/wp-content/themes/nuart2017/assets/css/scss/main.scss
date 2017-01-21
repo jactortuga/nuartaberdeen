@@ -1,0 +1,10 @@
+// Reset using Normalize
+@import "base/reset";
+
+// Set variables and reusable mixins
+@import "base/variables";
+@import "base/mixins";
+
+body {
+  background-color: red;
+}

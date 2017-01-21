@@ -1,0 +1,77 @@
+// @function calc-perc($px, $full: 1130, $padding: 0){
+//   @return ($px - $padding)/$full * 100%;
+// }
+
+// @mixin inner {
+// 	/*grid 65 * 16 gutter 27 * 15*/
+// 	width: 90%;
+// 	max-width: 1445px;
+// 	margin: 0 auto;
+// 	min-height: 600px;
+// }
+
+// @mixin hide-text {
+//   text-indent: 102%;
+//   white-space: nowrap;
+//   overflow: hidden;
+//   display: block;
+// }
+// // modernizr class and Sass content inject for fallback code
+// @mixin no-svg { .no-svg & { @content } }
+ 
+// // mixin that requires filename without path or extension and optional extension override
+// @mixin svg-bkgd($filename, $size: 100%, $position: center, $repeat: no-repeat, $extension: '.png') {
+// 	background-image: url('img/' + $filename + '.svg');
+// 	background-repeat: $repeat;
+// 	background-size: $size;
+// 	background-position: $position;
+// 	@include no-svg { background-image: url('img/' + $filename + $extension); }
+// }
+
+// @function z($layer) {
+//   @if not map-has-key($z-layers, $layer) {
+//     @warn "No layer found for `#{$layer}` in $z-layers map. Property omitted.";
+//   }
+ 
+//   @return map-get($z-layers, $layer);
+// }
+
+// /*1100 - 11x grid: 60, 12x gutter: 36.6666*/
+// @function calc-perc($px, $full: 1780, $padding: 0){
+//   	@return ($px - $padding)/$full * 100%;
+// }
+
+
+// @mixin cross ($size: 30px, $height: 2px, $color: #fff)
+// {
+
+// 	width: $size;
+// 	height: $size;
+// 	cursor: pointer;
+// 	z-index: z('close');
+// 	text-indent: 200%;
+// 	display: block;
+// 	overflow: hidden;
+// 	> * {
+// 		display: none;
+// 	}
+// 	&:before,
+// 	&:after {
+// 		content: "";
+// 		display: block;
+// 		background-color: $color;
+// 		height: $height;
+// 		position: absolute;
+// 		width: 100%;
+// 		left: 0;
+// 		top: 50%;
+// 	}
+
+// 	&:after {
+//     	transform: rotate(45deg);
+// 	}
+
+// 	&:before {
+// 		transform: rotate(-45deg);
+// 	}	
+// }
