@@ -1,7 +1,5 @@
 <?php
 
-require_once("classes/optionspage.php");
-
 function tl_remove_media_controls() {
      remove_action( 'media_buttons', 'media_buttons' );
 }

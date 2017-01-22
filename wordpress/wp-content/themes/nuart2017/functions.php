@@ -26,13 +26,10 @@
  * @since Tortuga Labs - Nuart2017 1.0
  */
 
-
-require_once("inc/utils.php");
+require_once("inc/custom-admin.php");
+require_once("inc/custom-functionality.php");
 require_once("inc/custom-post-types.php");
-require_once("inc/admin.php");
-require_once("inc/navigation.php");
 
-//require_once("inc/classes/instagram.php");
 /**
  * Tortuga Labs - Nuart2017 only works in WordPress 4.1 or later.
  */
