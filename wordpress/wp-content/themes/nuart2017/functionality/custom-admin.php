@@ -1,32 +1,8 @@
 <?php
 
-function tl_remove_media_controls() {
-     remove_action( 'media_buttons', 'media_buttons' );
-}
- add_action('admin_head','tl_remove_media_controls');
 
-/*-----------------------------------------------------------------------------------*/
-/* Remove Dashboard widgets */
-/*-----------------------------------------------------------------------------------*/
-function tl_remove_dashboard_widget() {
-    remove_meta_box( 'dashboard_incoming_links', 'dashboard', 'normal' );
-    remove_meta_box( 'dashboard_plugins', 'dashboard', 'normal' );
-    remove_meta_box( 'dashboard_primary', 'dashboard', 'side' );
-    remove_meta_box( 'dashboard_secondary', 'dashboard', 'normal' );
-    remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
-    remove_meta_box( 'dashboard_recent_drafts', 'dashboard', 'side' );
-    remove_meta_box( 'dashboard_recent_comments', 'dashboard', 'normal' );
-    remove_meta_box( 'dashboard_right_now', 'dashboard', 'normal' );
-    remove_meta_box( 'dashboard_activity', 'dashboard', 'normal');//since 3.8
-} 
- 
-// Hook into the 'wp_dashboard_setup' action to register our function
-add_action('wp_dashboard_setup', 'tl_remove_dashboard_widget' );
-
-/*-----------------------------------------------------------------------------------*/
-/* Replace Logo on login page */
-/*-----------------------------------------------------------------------------------*/
-function tl_login_logo() { ?>
+// CUSTOMIZE WORDPRESS ADMIN LOGIN LOGO
+function custom_login_logo() { ?>
     <style type="text/css">
         body.login div#login h1 a {
             background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/img/logo-black.svg);
@@ -38,56 +14,94 @@ function tl_login_logo() { ?>
         }
     </style>
 <?php }
-add_action( 'login_enqueue_scripts', 'tl_login_logo' );
+add_action('login_enqueue_scripts', 'custom_login_logo');
 
-add_filter( 'login_headerurl', 'tl_loginlogo_url' );
-function tl_loginlogo_url($url) {
-  return get_site_url();
+
+// ADD LINK TO WORDPRESS ADMIN LOGIN LOGO
+function add_logo_url($url) {
+    return get_site_url();
 }
-
-/* Allow svg uploads in media library */
-function cc_mime_types( $mimes ){
-  $mimes['svg'] = 'image/svg+xml';
-  $mimes['svgz'] = 'image/svg+xml';
-  return $mimes;
-}
-add_filter( 'upload_mimes', 'cc_mime_types' );
-
-function tl_remove_my_post_metaboxes() {
-  //remove_meta_box( 'categorydiv','post','normal' ); // Categories Metabox
-  remove_meta_box( 'tagsdiv-post_tag','post','normal' ); // Tags Metabox
-   remove_submenu_page('edit.php', 'edit-tags.php?taxonomy=post_tag');
-}
-add_action('admin_menu','tl_remove_my_post_metaboxes');
-
-add_filter('show_admin_bar', '__return_false');
+add_filter('login_headerurl', 'add_logo_url');
 
 
-/*-----------------------------------------------------------------------------------*/
-/* Remove Unwanted Admin Menu Items */
-/*-----------------------------------------------------------------------------------*/
-
-function tl_remove_admin_menu_items() {
-	$remove_menu_items = array(__('Comments'));
-	global $menu;
-	end ($menu);
-	while (prev($menu)){
-		$item = explode(' ',$menu[key($menu)][0]);
-		if(in_array($item[0] != NULL?$item[0]:"" , $remove_menu_items)){
-		unset($menu[key($menu)]);}
-	}
-}
-add_action('admin_menu', 'tl_remove_admin_menu_items');
-
-add_action( 'admin_bar_menu', 'tl_remove_wp_nodes', 999 );
-//remove from the NEW bar
-function tl_remove_wp_nodes() 
-{
+// CUSTOMIZE ADMIN BAR
+function customize_admin_bar() {
     global $wp_admin_bar;   
     $wp_admin_bar->remove_menu('wp-logo');
     $wp_admin_bar->remove_menu('comments'); 
-    //$wp_admin_bar->remove_menu('post'); 
 }
+add_action('admin_bar_menu', 'customize_admin_bar', 999);
+add_filter('show_admin_bar', '__return_false');
+
+
+// CLEAN WORDPRESS DASHBOARD
+function remove_dashboard_widgets() {
+    remove_meta_box('dashboard_incoming_links', 'dashboard', 'normal');
+    remove_meta_box('dashboard_plugins', 'dashboard', 'normal');
+    remove_meta_box('dashboard_primary', 'dashboard', 'side');
+    remove_meta_box('dashboard_secondary', 'dashboard', 'normal');
+    remove_meta_box('dashboard_quick_press', 'dashboard', 'side');
+    remove_meta_box('dashboard_recent_drafts', 'dashboard', 'side');
+    remove_meta_box('dashboard_recent_comments', 'dashboard', 'normal');
+    remove_meta_box('dashboard_right_now', 'dashboard', 'normal');
+    remove_meta_box('dashboard_activity', 'dashboard', 'normal');
+} 
+add_action('wp_dashboard_setup', 'remove_dashboard_widgets');
+
+
+// REMOVE COMMENTS FUNCTIONALITY
+function remove_admin_menu_items() {
+    $remove_menu_items = array(__('Comments'));
+    global $menu;
+    end ($menu);
+    while (prev($menu)){
+        $item = explode(' ',$menu[key($menu)][0]);
+        if(in_array($item[0] != NULL?$item[0]:"" , $remove_menu_items)){
+        unset($menu[key($menu)]);}
+    }
+}
+add_action('admin_menu', 'remove_admin_menu_items');
+
+
+
+// REMOVE POSTS "ADD MEDIA BUTTON"
+function remove_media_button() {
+    remove_action('media_buttons', 'media_buttons');
+}
+add_action('admin_head','remove_media_button');
+
+
+// ALLOW SVG UPLOADS IN MEDIA LIBRARY
+function allow_svgs($mimes){
+  $mimes['svg']  = 'image/svg+xml';
+  $mimes['svgz'] = 'image/svg+xml';
+  return $mimes;
+}
+add_filter('upload_mimes', 'allow_svgs');
+
+
+// CUSTOMIZE POSTS METABOXES
+function customize_posts_metaboxes() {
+    remove_submenu_page('edit.php', 'edit-tags.php?taxonomy=post_tag');
+    remove_meta_box('tagsdiv-post_tag','post','normal');
+    //remove_meta_box( 'categorydiv','post','normal' );
+}
+add_action('admin_menu','customize_posts_metaboxes');
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Custom WordPress Footer
 function tl_remove_footer_admin () {
@@ -146,3 +160,29 @@ function tl_column_init() {
   add_filter( 'manage_pages_columns' , 'tl_manage_columns' );
 }
 add_action( 'admin_init' , 'tl_column_init' );
+
+
+// SET THEME SETTINGS PAGE FOR GLOBAL CUSTOM FIELDS 
+if( function_exists('acf_add_options_page') ) {
+  
+  acf_add_options_page(array(
+    'page_title'  => 'Theme General Settings',
+    'menu_title'  => 'Theme Settings',
+    'menu_slug'   => 'theme-general-settings',
+    'capability'  => 'edit_posts',
+    'redirect'    => false
+  ));
+  
+  acf_add_options_sub_page(array(
+    'page_title'  => 'Theme Header Settings',
+    'menu_title'  => 'Header',
+    'parent_slug' => 'theme-general-settings',
+  ));
+  
+  acf_add_options_sub_page(array(
+    'page_title'  => 'Theme Footer Settings',
+    'menu_title'  => 'Footer',
+    'parent_slug' => 'theme-general-settings',
+  ));
+  
+}
