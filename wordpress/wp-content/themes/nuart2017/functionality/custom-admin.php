@@ -110,7 +110,7 @@ add_action('admin_init', 'initialize_columns');
 
 
 // REMOVE STANDARD CONTENT EDITOR FROM SELECTED PAGES
-function hide_content_editor() {
+function hide_page_content_editor() {
     global $pagenow;
     if(!('post.php' == $pagenow)) return;
 
@@ -129,7 +129,7 @@ function hide_content_editor() {
     //   remove_post_type_support('page', 'editor');
     // }
 }
-add_action('admin_head', 'hide_content_editor');
+add_action('admin_head', 'hide_page_content_editor');
 
 
 // REMOVE STANDARD CONTENT EDITOR FROM STANDARD POSTS
