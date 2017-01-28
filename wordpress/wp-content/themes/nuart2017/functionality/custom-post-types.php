@@ -41,7 +41,7 @@ function set_artists_post_type() {
         'show_in_menu'          => true,
         'menu_icon'             => 'dashicons-admin-customizer',
         'capability_type'       => 'artist',
-        'taxonomies'            => array('category'),
+        // 'taxonomies'            => array('category'),
         'capabilities'          => array(
             'edit_post'           => 'edit_artist', 
             'read_post'           => 'read_artist', 

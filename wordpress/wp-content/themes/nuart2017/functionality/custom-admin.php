@@ -116,6 +116,61 @@ function remove_media_button() {
 add_action('admin_head','remove_media_button');
 
 
+// CUSTOMIZE WYSIWYG EDITOR STYLES
+function customize_styles($settings) {  
+
+    $style_formats = array(  
+        array( 
+            'title' => 'Paragraph Font Size',
+            'items' => array(
+                array(  
+                    'title'     => 'Large',  
+                    'block'     => 'p',  
+                    'classes'   => '-large',
+                    'wrapper'   => false,
+                    'exact'     => true,
+                ),
+                array(  
+                    'title'     => 'Medium',  
+                    'block'     => 'p',  
+                    'classes'   => '-medium',
+                    'wrapper'   => false,
+                    'exact'     => true,
+                ),
+                array(  
+                    'title'     => 'Small',  
+                    'block'     => 'p',  
+                    'classes'   => '-small',
+                    'wrapper'   => false,
+                    'exact'     => true,
+                )
+            )
+        ),   
+    );
+
+    $settings['style_formats'] = json_encode($style_formats);
+    return $settings;
+} 
+add_filter('tiny_mce_before_init', 'customize_styles'); 
+
+
+// CUSTOMIZE WYSIWYG EDITOR TOOLBAR
+function customize_toolbar($toolbars) {
+
+    $toolbars['Custom']     = array();
+    $toolbars['Custom'][1]  = array('styleselect', 'bold' , 'italic' , 'link', 'unlink');
+
+    if(($key = array_search('code', $toolbars['Full' ][2])) !== false) {
+        unset( $toolbars['Full'][2][$key]);
+    }
+
+    unset($toolbars['Basic']);
+
+    return $toolbars;
+}
+add_filter('acf/fields/wysiwyg/toolbars', 'customize_toolbar');
+
+
 // CUSTOMIZE POSTS METABOXES
 function customize_posts_metaboxes() {
     remove_submenu_page('edit.php', 'edit-tags.php?taxonomy=post_tag');
