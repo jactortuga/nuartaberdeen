@@ -111,7 +111,10 @@ add_action('admin_init', 'initialize_columns');
 
 // REMOVE STANDARD CONTENT EDITOR FROM SELECTED PAGES
 function hide_content_editor() {
+    global $pagenow;
+    if(!('post.php' == $pagenow)) return;
 
+    global $post;
     $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
     if(!isset($post_id)) return;
 
@@ -127,6 +130,13 @@ function hide_content_editor() {
     // }
 }
 add_action('admin_head', 'hide_content_editor');
+
+
+// REMOVE STANDARD CONTENT EDITOR FROM STANDARD POSTS
+add_action('init', 'hide_post_content_editor');
+function hide_post_content_editor() {
+    remove_post_type_support('post', 'editor');
+}
 
 
 // REMOVE POSTS "ADD MEDIA BUTTON"
