@@ -9,5 +9,8 @@
 
 get_header(); ?>
 
+<h1>Single Post</h1>
+
+<? include(locate_template('partials/_modules.php')); ?>
 
 <?php get_footer(); ?>
