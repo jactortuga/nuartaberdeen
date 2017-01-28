@@ -1,7 +1,7 @@
 <?php
 
-    $module_title   = get_sub_field('module_title');
-    $module_content = get_sub_field('module_content');
+$module_title   = get_sub_field('module_title');
+$module_content = get_sub_field('module_content');
 
 ?>
 

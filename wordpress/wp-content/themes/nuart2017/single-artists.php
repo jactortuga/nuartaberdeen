@@ -13,7 +13,6 @@ $artist_gallery   = get_field('artist_gallery');
 $artist_bio       = get_field('artist_bio');
 $artist_video     = get_field('artist_video');
 
-
 get_header(); ?>
 
 
@@ -51,5 +50,6 @@ get_header(); ?>
     </div>
 
 </section>
+
 
 <? get_footer(); ?>
