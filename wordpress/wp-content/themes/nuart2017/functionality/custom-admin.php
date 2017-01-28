@@ -109,6 +109,26 @@ function initialize_columns() {
 add_action('admin_init', 'initialize_columns');
 
 
+// REMOVE STANDARD CONTENT EDITOR FROM SELECTED PAGES
+function hide_content_editor() {
+
+    $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
+    if(!isset($post_id)) return;
+
+    if(get_the_title($post_id) == 'Home'){ 
+        remove_post_type_support('page', 'editor');
+    }
+
+    // Hide the editor on a page with a specific page template
+    // Get the name of the Page Template file.
+    // $template_file = get_post_meta($post_id, '_wp_page_template', true);
+    // if($template_file == 'my-page-template.php'){ // the filename of the page template
+    //   remove_post_type_support('page', 'editor');
+    // }
+}
+add_action('admin_head', 'hide_content_editor');
+
+
 // REMOVE POSTS "ADD MEDIA BUTTON"
 function remove_media_button() {
     remove_action('media_buttons', 'media_buttons');
