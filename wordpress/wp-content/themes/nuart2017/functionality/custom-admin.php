@@ -190,8 +190,8 @@ function customize_toolbar($toolbars) {
     $toolbars['Custom']     = array();
     $toolbars['Custom'][1]  = array('styleselect', 'bold' , 'italic' , 'link', 'unlink');
 
-    if(($key = array_search('code', $toolbars['Full' ][2])) !== false) {
-        unset( $toolbars['Full'][2][$key]);
+    if(($key = array_search('code', $toolbars['Full'][2])) !== false) {
+        unset($toolbars['Full'][2][$key]);
     }
 
     unset($toolbars['Basic']);
