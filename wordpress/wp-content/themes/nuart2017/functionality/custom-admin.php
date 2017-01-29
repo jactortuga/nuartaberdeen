@@ -185,7 +185,7 @@ add_filter('tiny_mce_before_init', 'customize_styles');
 
 
 // CUSTOMIZE WYSIWYG EDITOR TOOLBAR
-function customize_toolbar($toolbars) {
+function customize_visual_toolbar($toolbars) {
 
     $toolbars['Custom']     = array();
     $toolbars['Custom'][1]  = array('styleselect', 'bold' , 'italic' , 'link', 'unlink');
@@ -198,7 +198,15 @@ function customize_toolbar($toolbars) {
 
     return $toolbars;
 }
-add_filter('acf/fields/wysiwyg/toolbars', 'customize_toolbar');
+add_filter('acf/fields/wysiwyg/toolbars', 'customize_visual_toolbar');
+
+
+// CUSTOMIZE QUICKTAGS EDITOR TOOLBAR
+function customize_quicktags_toolbar($qtInit) {
+   $qtInit['buttons'] = 'strong,em,link';
+   return $qtInit;
+}
+add_filter('quicktags_settings', 'customize_quicktags_toolbar');
 
 
 // CUSTOMIZE POSTS METABOXES
@@ -217,7 +225,7 @@ add_action('admin_menu','customize_posts_metaboxes');
 // SET THEME SETTINGS PAGE FOR GLOBAL CUSTOM FIELDS 
 if(function_exists('acf_add_options_page')) {
     acf_add_options_page(array(
-        'page_title'  => 'Theme General Settings',
+        'page_title'  => 'Theme Global Settings',
         'menu_title'  => 'Theme Settings',
         'menu_slug'   => 'theme-general-settings',
         'capability'  => 'edit_posts',
