@@ -26,5 +26,6 @@
 <body <?php body_class(); ?>>
 
   <h1>This is Nuart</h1>
+  <!-- <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?> -->
 
 	<main>

@@ -47,7 +47,7 @@ function customize_admin_footer() {
         jQuery('li#menu-appearance.wp-has-submenu li a[href=\"themes.php\"]').remove();
         jQuery('li#menu-appearance.wp-has-submenu a.wp-has-submenu').removeAttr(\"href\");
         jQuery('li#menu-appearance.wp-has-submenu li a[href=\"widgets.php\"]').remove();
-        jQuery('li#menu-appearance.wp-has-submenu li a[href=\"nav-menus.php\"]').remove();
+        // jQuery('li#menu-appearance.wp-has-submenu li a[href=\"nav-menus.php\"]').remove();
         jQuery('li#menu-appearance.wp-has-submenu li a[href=\"themes.php?page=custom-background\"]').remove();
         });
     </script>
@@ -57,6 +57,30 @@ function customize_admin_footer() {
 ?>";
 }
 add_filter('admin_footer_text', 'customize_admin_footer');
+
+
+// REMOVE APPEARANCE CUSTOMIZE MENU ITEM
+function remove_customize() {
+    $customize_url_arr      = array();
+    $customize_url_arr[]    = 'customize.php';
+    $customize_url          = add_query_arg( 'return', urlencode( wp_unslash( $_SERVER['REQUEST_URI'] ) ), 'customize.php' );
+    $customize_url_arr[]    = $customize_url;
+
+    if(current_theme_supports('custom-header') && current_user_can('customize')) {
+        $customize_url_arr[] = add_query_arg('autofocus[control]', 'header_image', $customize_url);
+        $customize_url_arr[] = 'custom-header';
+    }
+    
+    if(current_theme_supports('custom-background') && current_user_can('customize')) {
+        $customize_url_arr[] = add_query_arg('autofocus[control]', 'background_image', $customize_url);
+        $customize_url_arr[] = 'custom-background';
+    }
+
+    foreach($customize_url_arr as $customize_url) {
+        remove_submenu_page('themes.php', $customize_url);
+    }
+}
+add_action('admin_menu', 'remove_customize', 999);
 
 
 // CLEAN WORDPRESS DASHBOARD
@@ -81,6 +105,16 @@ function allow_svgs($mimes){
   return $mimes;
 }
 add_filter('upload_mimes', 'allow_svgs');
+
+// ALLOW SVG UPLOADS IN MEDIA LIBRARY -- FIX
+function allow_svgs_fix($data, $file, $filename, $mimes) {
+    $wp_filetype        = wp_check_filetype($filename, $mimes);
+    $ext                = $wp_filetype['ext'];
+    $type               = $wp_filetype['type'];
+    $proper_filename    = $data['proper_filename'];
+    return compact('ext', 'type', 'proper_filename');
+}
+add_filter('wp_check_filetype_and_ext', 'allow_svgs_fix', 10, 4);
 
 
 // REMOVE COMMENTS FUNCTIONALITY
@@ -243,4 +277,27 @@ if(function_exists('acf_add_options_page')) {
         'menu_title'  => 'Footer',
         'parent_slug' => 'theme-general-settings',
     ));
+}
+
+
+// SET THEME PRIMARY MENU
+$menu_name      = 'Primary Menu';
+$menu_exists    = wp_get_nav_menu_object($menu_name);
+
+if(!$menu_exists) {
+    $menu_id = wp_create_nav_menu($menu_name);
+
+    wp_update_nav_menu_item($menu_id, 0, array(
+        'menu-item-title'   =>  __('Home'),
+        'menu-item-classes' => 'home',
+        'menu-item-url'     => home_url( '/' ), 
+        'menu-item-status'  => 'publish')
+    );
+
+    // wp_update_nav_menu_item($menu_id, 0, array(
+    //     'menu-item-title' =>  __('Custom Page'),
+    //     'menu-item-url' => home_url( '/custom/' ), 
+    //     'menu-item-status' => 'publish')
+    // );
+
 }
