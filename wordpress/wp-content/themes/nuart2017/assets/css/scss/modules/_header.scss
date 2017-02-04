@@ -12,7 +12,7 @@
 
     &__logo_container {
         width: 100%;
-        height: calc(100% - $large-spacing);
+        height: calc(100% - #{$large-spacing});
         position: relative;
         overflow: hidden;
         background-color: pink;
@@ -20,7 +20,7 @@
 
     &__bg_image {
         width: 100%;
-        height: calc(100% - $large-spacing);
+        height: calc(100% - #{$large-spacing});
         position: absolute;
         top: 0;
     }

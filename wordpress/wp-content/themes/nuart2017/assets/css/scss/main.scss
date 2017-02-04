@@ -12,6 +12,7 @@
 
 // Modules Stylesheets
 @import 'modules/header';
+@import 'modules/footer';
 @import 'modules/title';
 @import 'modules/article';
 @import 'modules/repeater';
@@ -21,6 +22,15 @@
 
 body {
     background-color: $purple;
+
+    a {
+        text-decoration: none;
+        cursor: pointer;
+
+        &.--hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 .module {

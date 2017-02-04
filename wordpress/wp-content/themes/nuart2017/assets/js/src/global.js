@@ -13,8 +13,9 @@
     }
 
     $(document).ready(function() {
-        console.log('something')
+        console.log('hello world')
         app.setup.init();
+        app.hovers.global();
         app.hovers.holdingArtistsDesktop();
     });
 
@@ -27,21 +28,40 @@
     var app = {
         setup : {
             init : function() {
-                console.log('hello fdfsdworld');
                 $('.bxslider').bxSlider();
             },
         },
 
         hovers : {
+            global : function() {
+                $('a')
+                    .on('mouseenter', function() {
+                        $(this).addClass('--hover');
+                    })
+                    .on('mouseleave', function() {
+                        $(this).removeClass('--hover');
+                    })
+            },
+
             holdingArtistsDesktop : function() {
                 $('.module__repeater-item')
                     .on('mouseenter', function() {
-                        console.log('ENTER')
-                        $(this).children('.module__repeater-item-image').velocity({ opacity: 0 });
+                        $(this).children('.module__repeater-item-image').velocity(
+                            { opacity: 0 },
+                            { complete: function() {
+                                    $(this).siblings('.module__repeater-item-content').css('z-index', 2)
+                                }
+                            }
+                        );
                     })
                     .on('mouseleave', function() {
-                        console.log('LEAVE')
-                        $(this).children('.module__repeater-item-image').velocity({ opacity: 1 });
+                        $(this).children('.module__repeater-item-image').velocity(
+                            { opacity: 1 },
+                            { begin: function() {
+                                    $(this).siblings('.module__repeater-item-content').css('z-index', 0)
+                                }
+                            }
+                        );
                     })
             }
         }

@@ -51,8 +51,6 @@ get_header(); ?>
     </section>
 </div>
 
-<div class="modulex">
-    Sponsors Here
-</div>
-
 <?endwhile; endif;?>
+
+<?php get_footer(); ?>

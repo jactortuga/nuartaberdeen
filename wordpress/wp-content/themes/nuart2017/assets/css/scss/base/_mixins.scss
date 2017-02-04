@@ -5,6 +5,13 @@
     color: $color;
 }
 
+@mixin subtitle-text($color) {
+    font-family: 'GraniteHeadline-Regular';
+    font-size: $medium-font;
+    line-height: 1.6;
+    color: $color;
+}
+
 @mixin large-text($color) {
     font-family: 'NeueHaasUnicaPro-Regular';
     font-size: $large-font;

@@ -15,6 +15,16 @@
         overflow: hidden;
         background-color: $grey;
         text-align: center;
+
+        @media screen and (max-width: 950px) {
+            width: calc(100% / 2);
+            padding-bottom: calc(100% / 2);
+        }
+
+        @media screen and (max-width: 650px) {
+            width: calc(100%);
+            padding-bottom: calc(100%);
+        }
     }
 
     &__repeater-item-image {
@@ -35,8 +45,7 @@
     }
 
     &__repeater-item-link {
-        text-decoration: none;
-        cursor: pointer;
+        color: $purple;
     }
 
     &__repeater-item-title {
@@ -46,5 +55,13 @@
 
     &__repeater-item-text {
         @include small-text($black);
+
+        @media screen and (min-width: 650px) and (max-width: 1200px) {
+            font-size: 16px;
+        }
+
+        @media screen and (max-width: 400px) {
+            font-size: 16px;
+        }
     }
 }

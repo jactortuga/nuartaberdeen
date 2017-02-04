@@ -289,7 +289,7 @@ table {
 
 .site-header__logo_container {
   width: 100%;
-  height: calc(100% - $large-spacing);
+  height: calc(100% - 80px);
   position: relative;
   overflow: hidden;
   background-color: pink;
@@ -297,7 +297,7 @@ table {
 
 .site-header__bg_image {
   width: 100%;
-  height: calc(100% - $large-spacing);
+  height: calc(100% - 80px);
   position: absolute;
   top: 0;
 }
@@ -319,6 +319,81 @@ table {
   .site-header__logo_caption {
     font-size: 40px;
     line-height: 1.6;
+  }
+}
+
+.site-footer {
+  width: 100%;
+  padding: 80px 0;
+  background-color: #743BBD;
+}
+
+@media screen and (max-width: 768px) {
+  .site-footer {
+    padding: 40px 0;
+  }
+}
+
+.site-footer__title {
+  width: calc(100% - 160px);
+  margin: 0 auto 20px auto;
+  font-family: 'GraniteHeadline-Regular';
+  font-size: 25px;
+  line-height: 1.6;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 768px) {
+  .site-footer__title {
+    width: calc(100% - 80px);
+  }
+}
+
+.site-footer__contact {
+  width: calc(100% - 160px);
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media screen and (max-width: 768px) {
+  .site-footer__contact {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: calc(100% - 80px);
+  }
+}
+
+.site-footer__contact a {
+  color: #FFFFFF;
+}
+
+.site-footer__column {
+  width: calc(50% - 80px);
+  font-family: 'NeueHaasUnicaPro-Regular';
+  font-size: 20px;
+  line-height: 1.2;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 768px) {
+  .site-footer__column {
+    width: 100%;
+  }
+  .site-footer__column--left {
+    margin-bottom: 20px;
   }
 }
 
@@ -414,6 +489,20 @@ table {
   text-align: center;
 }
 
+@media screen and (max-width: 950px) {
+  .module__repeater-item {
+    width: calc(100% / 2);
+    padding-bottom: calc(100% / 2);
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .module__repeater-item {
+    width: calc(100%);
+    padding-bottom: calc(100%);
+  }
+}
+
 .module__repeater-item-image {
   width: 100%;
   height: auto;
@@ -433,8 +522,7 @@ table {
 }
 
 .module__repeater-item-link {
-  text-decoration: none;
-  cursor: pointer;
+  color: #743BBD;
 }
 
 .module__repeater-item-title {
@@ -452,6 +540,18 @@ table {
   color: #000000;
 }
 
+@media screen and (min-width: 650px) and (max-width: 1200px) {
+  .module__repeater-item-text {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .module__repeater-item-text {
+    font-size: 16px;
+  }
+}
+
 .page-template-holding .site-header__nav {
   height: 10px;
 }
@@ -466,6 +566,15 @@ table {
 
 body {
   background-color: #743BBD;
+}
+
+body a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+body a.--hover {
+  text-decoration: underline;
 }
 
 .module {

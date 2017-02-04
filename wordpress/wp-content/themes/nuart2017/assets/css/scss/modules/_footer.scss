@@ -1,0 +1,50 @@
+.site-footer {
+    width: 100%;
+    padding: $large-spacing 0;
+    background-color: $purple;
+
+    @media screen and (max-width: $medium-break) {
+        padding: $medium-spacing 0;
+    }
+
+    &__title {
+        width: calc(100% - #{$double-spacing});
+        margin: 0 auto $small-spacing auto;
+        @include subtitle-text($white);
+
+        @media screen and (max-width: $medium-break) {
+            width: calc(100% - #{$large-spacing});
+        }
+    }
+
+    &__contact {
+        width: calc(100% - #{$double-spacing});
+        margin: 0 auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        @media screen and (max-width: $medium-break) {
+            flex-direction: column;
+            width: calc(100% - #{$large-spacing});
+        }
+
+        a {
+            color: $white;
+        }
+    }
+
+    &__column {
+        width: calc(50% - #{$large-spacing});
+        @include small-text($white);
+
+        @media screen and (max-width: $medium-break) {
+            width: 100%;
+
+            &--left {
+                margin-bottom: $small-spacing;
+            }
+        }
+    }
+}
