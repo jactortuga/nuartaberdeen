@@ -1,0 +1,44 @@
+.module {
+
+    &__repeater {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    &__repeater-item {
+        width: calc(100% / 3);
+        position: relative;
+        text-align: center;
+    }
+
+    &__repeater-item-image {
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+    }
+
+    &__repeater-item-content {
+        width: 80%;
+        margin: 0 auto;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+
+    &__repeater-item-link {
+        text-decoration: none;
+    }
+
+    &__repeater-item-title {
+        @include medium-text($purple);
+    }
+
+    &__repeater-item-text {
+        @include small-text($white);
+    }
+}

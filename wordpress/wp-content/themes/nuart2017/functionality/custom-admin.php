@@ -152,7 +152,11 @@ function hide_page_content_editor() {
     $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'];
     if(!isset($post_id)) return;
 
-    if(get_the_title($post_id) == 'Home'){ 
+    if(get_the_title($post_id) == 'Home') { 
+        remove_post_type_support('page', 'editor');
+    }
+
+    if(get_the_title($post_id) == 'Holding') { 
         remove_post_type_support('page', 'editor');
     }
 

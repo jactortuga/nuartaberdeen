@@ -12,7 +12,9 @@
 
 // Modules Stylesheets
 @import 'modules/header';
+@import 'modules/title';
 @import 'modules/article';
+@import 'modules/repeater';
 
 // Templates Stylesheets
 @import 'templates/holding';
@@ -23,6 +25,5 @@ body {
 
 .module {
     width: 100%;
-    display: flex;
     background-color: $white;
 }

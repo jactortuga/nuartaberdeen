@@ -1,0 +1,13 @@
+.module {
+
+    &__title {
+        height: $large-spacing;
+        background-color: $purple;
+        text-align: center;
+        @include title-text($white);
+
+        &--single {
+            width: 100%;
+        }
+    }
+}

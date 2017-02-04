@@ -32,7 +32,7 @@
         bottom: 0;
         background-color: $purple;
         text-align: center;
-        @include large-text($white);
+        @include title-text($white);
 
         @media screen and (max-width: $smallest-break) {
             font-size: 40px;

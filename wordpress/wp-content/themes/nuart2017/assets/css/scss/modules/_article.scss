@@ -16,8 +16,6 @@
 
 
         &--centered {
-            justify-content: center;
-            align-items: center;
             text-align: center;
         }
     }
@@ -35,7 +33,7 @@
 
 
     &__article-title {
-        @include large-text($purple);
+        @include title-text($purple);
     }
 
     &__article-title--padding {
