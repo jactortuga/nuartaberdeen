@@ -281,7 +281,7 @@ if(function_exists('acf_add_options_page')) {
 
 
 // SET THEME PRIMARY MENU
-$menu_name      = 'Primary Menu';
+$menu_name      = 'Primary';
 $menu_exists    = wp_get_nav_menu_object($menu_name);
 
 if(!$menu_exists) {

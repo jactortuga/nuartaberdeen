@@ -1,5 +1,19 @@
-.something {
-    color: $purple;
-    font-size: 50px;
-    font-family: 'GraniteHeadline-Regular';
+.page-template-holding {
+
+    // RESIZE NAV
+    .site-header {
+        &__nav {
+            height: 10px;
+
+            a {
+                display: none;
+            }
+        }
+
+        &__logo_container {
+            height: calc(100% - 10px);
+        }
+    }
+
+
 }

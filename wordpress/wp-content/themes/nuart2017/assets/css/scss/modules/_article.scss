@@ -1,0 +1,54 @@
+.module {
+
+    &__article {
+        width: 100%;
+        padding: $large-spacing 0;
+        background-color: $white;
+
+        @media screen and (max-width: $medium-break) {
+            padding: $medium-spacing 0;
+        }
+
+        @media screen and (max-width: $small-break) {
+            width: 95%;
+            margin: 0 auto;
+        }
+
+
+        &--centered {
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+    }
+
+    &__text-wrapper {
+        margin: 0 auto;
+        max-width: $max-paragraph;
+        @include small-text($black);
+
+        &--left {
+            text-align: left;
+        }
+    }
+
+
+
+    &__article-title {
+        @include large-text($purple);
+    }
+
+    &__article-title--padding {
+        padding-bottom: $large-spacing;
+
+        @media screen and (max-width: $medium-break) {
+            padding-bottom: $medium-spacing;
+        }
+    }
+}
+
+
+
+// .module_
+
+// .module .module__article--

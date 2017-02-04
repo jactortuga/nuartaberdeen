@@ -1,17 +1,28 @@
-// Reset using Normalize
+// Reset Stylesheet
 @import 'base/reset';
 
-// Add BxSlider Stylesheet
+// BxSlider Stylesheet
 @import 'base/bxslider';
 
-// Set variables and reusable mixins
+//Variables - Fonts - Mixins
 @import 'base/variables';
-@import 'base/mixins';
+@import 'base/fonts';
 @import 'base/type';
+@import 'base/mixins';
+
+// Modules Stylesheets
+@import 'modules/header';
+@import 'modules/article';
 
 // Templates Stylesheets
 @import 'templates/holding';
 
 body {
-  background-color: green;
+    background-color: $purple;
+}
+
+.module {
+    width: 100%;
+    display: flex;
+    background-color: $white;
 }

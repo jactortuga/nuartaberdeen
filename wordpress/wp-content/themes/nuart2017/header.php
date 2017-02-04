@@ -8,7 +8,16 @@
  * @subpackage Tortuga Labs - Nuart2017
  * @since Tortuga Labs - Nuart2017 1.0
  */
-?><!DOCTYPE html>
+
+$header_type    = get_field('header_type', 'option');
+$header_image   = ($header_type == 'image' ? get_field('header_image', 'option') : false);
+$header_video   = ($header_type == 'video' ? get_field('header_video', 'option') : false);
+$header_logo    = (get_field('header_logo', 'option') ? get_field('header_logo', 'option') : false);
+$header_info    = get_field('header_info', 'option');
+
+?>
+
+<!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -25,7 +34,38 @@
 
 <body <?php body_class(); ?>>
 
-  <h1>This is Nuart</h1>
-  <!-- <?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?> -->
+    <header class="site-header">
 
-	<main>
+        <?
+            $custom_menu = array(
+                'menu'              => 'primary',
+                'container'         => 'nav', 
+                'container_class'   => 'site-header__nav', 
+                'echo'              => false,
+                'fallback_cb'       => false,
+                'items_wrap'        => '%3$s',
+                'depth'             => 0
+            );
+            echo strip_tags(wp_nav_menu($custom_menu), '<nav><a>');
+        ?>
+
+        <figure class="site-header__logo_container">
+            <? if($header_image): ?>
+                <?= wp_get_attachment_image($header_image, 'full', false, array('class' => 'site-header__bg_image')); ?>
+            <? elseif($header_video):?>
+                <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+
+                <div class='embed-container'>
+                      <?= $header_video ?>
+                </div>
+            <? endif; ?>
+
+            <? if($header_logo): ?>
+                <?= wp_get_attachment_image($header_logo, 'full'); ?>
+            <? endif; ?>
+            <figcaption class="site-header__logo_caption"><?= $header_info ?></figcaption>
+        </figure>
+
+    </header>
+
+    <main>
