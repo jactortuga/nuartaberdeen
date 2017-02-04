@@ -1,12 +1,16 @@
 // Reset using Normalize
-@import "base/reset";
+@import 'base/reset';
 
 // Add BxSlider Stylesheet
-@import "base/bxslider";
+@import 'base/bxslider';
 
 // Set variables and reusable mixins
-@import "base/variables";
-@import "base/mixins";
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/type';
+
+// Templates Stylesheets
+@import 'templates/holding';
 
 body {
   background-color: green;

@@ -566,6 +566,26 @@ img, video, audio, iframe, object {
   padding: 10px;
 }
 
+@font-face {
+  font-family: 'GraniteHeadline-Regular';
+  src: url("../fonts/GraniteHeadline-Regular.woff") format("woff"), url("../fonts/GraniteHeadline-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NeueHaasUnicaPro-Regular';
+  src: url("../fonts/NeueHaasUnicaPro-Regular.woff") format("woff"), url("../fonts/NeueHaasUnicaPro-Regular.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.something {
+  color: #743BBD;
+  font-size: 50px;
+  font-family: 'GraniteHeadline-Regular';
+}
+
 body {
   background-color: green;
 }
