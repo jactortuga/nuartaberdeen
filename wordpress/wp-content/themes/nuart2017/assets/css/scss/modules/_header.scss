@@ -10,7 +10,7 @@
         background-color: $purple;
     }
 
-    &__logo_container {
+    &__logo-container {
         width: 100%;
         height: calc(100% - #{$large-spacing});
         position: relative;
@@ -18,14 +18,22 @@
         background-color: pink;
     }
 
-    &__bg_image {
+    &__bg-image {
         width: 100%;
         height: calc(100% - #{$large-spacing});
         position: absolute;
         top: 0;
     }
 
-    &__logo_caption {
+    &__logo-image {
+        width: 100%;
+        height: calc(100% - #{$large-spacing});
+        position: absolute;
+        top: 0;
+        z-index: 1;
+    }
+
+    &__logo-caption {
         width: 100%;
         height: $large-spacing;
         position: absolute;

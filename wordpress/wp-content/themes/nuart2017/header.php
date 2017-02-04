@@ -49,9 +49,9 @@ $header_info    = get_field('header_info', 'option');
             echo strip_tags(wp_nav_menu($custom_menu), '<nav><a>');
         ?>
 
-        <figure class="site-header__logo_container">
+        <figure class="site-header__logo-container">
             <? if($header_image): ?>
-                <?= wp_get_attachment_image($header_image, 'full', false, array('class' => 'site-header__bg_image')); ?>
+                <?= wp_get_attachment_image($header_image, 'landscape', false, array('class' => 'site-header__bg-image')); ?>
             <? elseif($header_video):?>
                 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 
@@ -61,9 +61,10 @@ $header_info    = get_field('header_info', 'option');
             <? endif; ?>
 
             <? if($header_logo): ?>
-                <?= wp_get_attachment_image($header_logo, 'full'); ?>
+                <?= wp_get_attachment_image($header_logo, 'full', false, array('class' => 'site-header__logo-image')); ?>
             <? endif; ?>
-            <figcaption class="site-header__logo_caption"><?= $header_info ?></figcaption>
+
+            <figcaption class="site-header__logo-caption"><?= $header_info ?></figcaption>
         </figure>
 
     </header>
