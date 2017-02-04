@@ -260,26 +260,26 @@ function customize_posts_metaboxes() {
 add_action('admin_menu','customize_posts_metaboxes');
 
 
-// SET THEME SETTINGS PAGE FOR GLOBAL CUSTOM FIELDS 
+// SET GLOBAL SETTINGS PAGE FOR GLOBAL CUSTOM FIELDS 
 if(function_exists('acf_add_options_page')) {
     acf_add_options_page(array(
-        'page_title'  => 'Theme Global Settings',
-        'menu_title'  => 'Theme Settings',
-        'menu_slug'   => 'theme-general-settings',
+        'page_title'  => 'Global Global Settings',
+        'menu_title'  => 'Global Settings',
+        'menu_slug'   => 'global-general-settings',
         'capability'  => 'edit_posts',
         'redirect'    => false
     ));
   
     acf_add_options_sub_page(array(
-        'page_title'  => 'Theme Header Settings',
+        'page_title'  => 'Global Header Settings',
         'menu_title'  => 'Header',
-        'parent_slug' => 'theme-general-settings',
+        'parent_slug' => 'global-general-settings',
     ));
   
     acf_add_options_sub_page(array(
-        'page_title'  => 'Theme Footer Settings',
+        'page_title'  => 'Global Footer Settings',
         'menu_title'  => 'Footer',
-        'parent_slug' => 'theme-general-settings',
+        'parent_slug' => 'global-general-settings',
     ));
 }
 

@@ -49,10 +49,8 @@ $header_info    = get_field('header_info', 'option');
             echo strip_tags(wp_nav_menu($custom_menu), '<nav><a>');
         ?>
 
-        <figure class="site-header__logo-container">
-            <? if($header_image): ?>
-                <?= wp_get_attachment_image($header_image, 'landscape', false, array('class' => 'site-header__bg-image')); ?>
-            <? elseif($header_video):?>
+        <figure class="site-header__logo-container" style="background-image: url('<?= $header_image ?>')">
+            <? if(!$header_image && $header_video):?>
                 <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
 
                 <div class='embed-container'>
