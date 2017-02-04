@@ -13,7 +13,9 @@
     }
 
     $(document).ready(function() {
+        console.log('something')
         app.setup.init();
+        app.hovers.holdingArtistsDesktop();
     });
 
     $(window).resize(function() {
@@ -25,10 +27,26 @@
     var app = {
         setup : {
             init : function() {
-                console.log('hello world');
+                console.log('hello fdfsdworld');
                 $('.bxslider').bxSlider();
             },
         },
+
+        hovers : {
+            holdingArtistsDesktop : function() {
+                $('.module__repeater-item')
+                    .on('mouseenter', function() {
+                        console.log('ENTER')
+                        $(this).children('.module__repeater-item-image').velocity({ opacity: 0 });
+                    })
+                    .on('mouseleave', function() {
+                        console.log('LEAVE')
+                        $(this).children('.module__repeater-item-image').velocity({ opacity: 1 });
+                    })
+            }
+        }
+
+        
     }
 
 

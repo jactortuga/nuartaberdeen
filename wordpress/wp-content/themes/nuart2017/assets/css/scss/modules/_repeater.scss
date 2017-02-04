@@ -9,14 +9,19 @@
 
     &__repeater-item {
         width: calc(100% / 3);
+        height: 0;
+        padding-bottom: calc(100% / 3);
         position: relative;
+        overflow: hidden;
+        background-color: $grey;
         text-align: center;
     }
 
     &__repeater-item-image {
         width: 100%;
         height: auto;
-        cursor: pointer;
+        position: relative;
+        z-index: 1;
     }
 
     &__repeater-item-content {
@@ -27,18 +32,19 @@
         left: 0;
         right: 0;
         transform: translateY(-50%);
-        z-index: 1;
     }
 
     &__repeater-item-link {
         text-decoration: none;
+        cursor: pointer;
     }
 
     &__repeater-item-title {
+        padding-bottom: $small-spacing;
         @include medium-text($purple);
     }
 
     &__repeater-item-text {
-        @include small-text($white);
+        @include small-text($black);
     }
 }

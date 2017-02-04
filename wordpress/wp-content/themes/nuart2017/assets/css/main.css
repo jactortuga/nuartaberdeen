@@ -406,14 +406,19 @@ table {
 
 .module__repeater-item {
   width: calc(100% / 3);
+  height: 0;
+  padding-bottom: calc(100% / 3);
   position: relative;
+  overflow: hidden;
+  background-color: #DCDDDE;
   text-align: center;
 }
 
 .module__repeater-item-image {
   width: 100%;
   height: auto;
-  cursor: pointer;
+  position: relative;
+  z-index: 1;
 }
 
 .module__repeater-item-content {
@@ -425,18 +430,26 @@ table {
   right: 0;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
-  z-index: 1;
 }
 
 .module__repeater-item-link {
   text-decoration: none;
+  cursor: pointer;
 }
 
 .module__repeater-item-title {
+  padding-bottom: 20px;
   font-family: 'NeueHaasUnicaPro-Regular';
   font-size: 25px;
   line-height: 1.2;
   color: #743BBD;
+}
+
+.module__repeater-item-text {
+  font-family: 'NeueHaasUnicaPro-Regular';
+  font-size: 20px;
+  line-height: 1.2;
+  color: #000000;
 }
 
 .page-template-holding .site-header__nav {
