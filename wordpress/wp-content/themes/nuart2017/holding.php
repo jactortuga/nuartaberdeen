@@ -37,9 +37,9 @@ get_header(); ?>
                 $website    = get_sub_field('website');
                 $image      = get_sub_field('image');
             ?>
-                <div class="module__repeater-item module__repeater-item-artist">
-                    <?= wp_get_attachment_image($image, 'full', false, array('class' => 'module__repeater-item-image module__repeater-item-image-artist')); ?>
-                    <article class="module__repeater-item-content module__repeater-item-content-artist">
+                <div class="module__repeater-item module__repeater-item--artist">
+                    <?= wp_get_attachment_image($image, 'full', false, array('class' => 'module__repeater-item-image module__repeater-item-image--artist')); ?>
+                    <article class="module__repeater-item-content module__repeater-item-content--artist">
                         <a href="<?= $website ?>" class="module__repeater-item-link" target="_blank">
                             <h1 class="module__repeater-item-title"><?= $name ?></h1>
                         </a>
@@ -60,9 +60,9 @@ get_header(); ?>
                 $website    = get_sub_field('website');
                 $image      = get_sub_field('image');
             ?>
-                <div class="module__repeater-item module__repeater-item-sponsor">
-                    <?= wp_get_attachment_image($image, 'full', false, array('class' => 'module__repeater-item-image module__repeater-item-image-sponsor')); ?>
-                    <article class="module__repeater-item-content module__repeater-item-content-sponsor">
+                <div class="module__repeater-item module__repeater-item--sponsor">
+                    <?= wp_get_attachment_image($image, 'full', false, array('class' => 'module__repeater-item-image module__repeater-item-image--sponsor')); ?>
+                    <article class="module__repeater-item-content module__repeater-item-content--sponsor">
                         <a href="<?= $website ?>" class="module__repeater-item-link" target="_blank">
                             <h1 class="module__repeater-item-title"><?= $name ?></h1>
                         </a>

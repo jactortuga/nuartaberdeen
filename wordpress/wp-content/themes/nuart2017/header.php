@@ -10,6 +10,7 @@
  */
 
 $header_type    = get_field('header_type', 'option');
+$header_class   = ($header_type == 'image' ? '--image' : '--video');
 $header_image   = ($header_type == 'image' ? get_field('header_image', 'option') : false);
 $header_video   = ($header_type == 'video' ? get_field('header_video', 'option') : false);
 $header_logo    = (get_field('header_logo', 'option') ? get_field('header_logo', 'option') : false);
@@ -34,7 +35,7 @@ $header_info    = get_field('header_info', 'option');
 
 <body <?php body_class(); ?>>
 
-    <header class="site-header">
+    <header class="site-header site-header<?= $header_class ?>">
 
         <?
             $custom_menu = array(
@@ -49,11 +50,10 @@ $header_info    = get_field('header_info', 'option');
             echo strip_tags(wp_nav_menu($custom_menu), '<nav><a>');
         ?>
 
-        <figure class="site-header__logo-container" style="background-image: url('<?= $header_image ?>')">
+        <figure class="site-header__logo-container site-header__logo-container<?= $header_class ?>" style="background-image: url('<?= $header_image ?>')">
+            
             <? if(!$header_image && $header_video):?>
-                <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
-
-                <div class='embed-container'>
+                <div class='site-header__video-container'>
                       <?= $header_video ?>
                 </div>
             <? endif; ?>

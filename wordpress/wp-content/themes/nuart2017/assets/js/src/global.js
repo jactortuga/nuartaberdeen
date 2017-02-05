@@ -45,7 +45,7 @@
             },
 
             holdingArtistsDesktop : function() {
-                $('.module__repeater-item-artist')
+                $('.module__repeater-item--artist')
                     .on('mouseenter', function() {
                         $(this).children('.module__repeater-item-image').velocity(
                             { opacity: 0 },
@@ -67,7 +67,7 @@
             },
 
             holdingSponsorsDesktop : function() {
-                $('.module__repeater-item-sponsor')
+                $('.module__repeater-item--sponsor')
                     .on('mouseenter', function() {
                         $(this).children('.module__repeater-item-image').velocity(
                             { opacity: 0 },
