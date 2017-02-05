@@ -535,39 +535,82 @@ table {
   text-align: center;
 }
 
+.module__repeater-item-artist {
+  height: 0;
+  padding-bottom: calc(100% / 3);
+}
+
 @media screen and (max-width: 950px) {
-  .module__repeater-item {
+  .module__repeater-item-artist {
     width: calc(100% / 2);
     padding-bottom: calc(100% / 2);
   }
 }
 
 @media screen and (max-width: 650px) {
-  .module__repeater-item {
+  .module__repeater-item-artist {
     width: calc(100%);
     padding-bottom: calc(100%);
   }
-}
-
-.module__repeater-item-artist {
-  height: 0;
-  padding-bottom: calc(100% / 3);
 }
 
 .module__repeater-item-sponsor {
   height: 250px;
 }
 
+@media screen and (max-width: 650px) {
+  .module__repeater-item-sponsor {
+    height: 200px;
+    width: calc(100%);
+  }
+}
+
 .module__repeater-item-sponsor:nth-of-type(1) .module__repeater-item-image-sponsor {
   max-height: 80px;
+}
+
+@media screen and (max-width: 950px) {
+  .module__repeater-item-sponsor:nth-of-type(1) .module__repeater-item-image-sponsor {
+    max-height: 60px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .module__repeater-item-sponsor:nth-of-type(1) .module__repeater-item-image-sponsor {
+    max-height: 90px;
+  }
 }
 
 .module__repeater-item-sponsor:nth-of-type(2) .module__repeater-item-image-sponsor {
   max-height: 200px;
 }
 
+@media screen and (max-width: 950px) {
+  .module__repeater-item-sponsor:nth-of-type(2) .module__repeater-item-image-sponsor {
+    max-height: 140px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .module__repeater-item-sponsor:nth-of-type(2) .module__repeater-item-image-sponsor {
+    max-height: 160px;
+  }
+}
+
 .module__repeater-item-sponsor:nth-of-type(3) .module__repeater-item-image-sponsor {
   max-height: 180px;
+}
+
+@media screen and (max-width: 950px) {
+  .module__repeater-item-sponsor:nth-of-type(3) .module__repeater-item-image-sponsor {
+    max-height: 120px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .module__repeater-item-sponsor:nth-of-type(3) .module__repeater-item-image-sponsor {
+    max-height: 140px;
+  }
 }
 
 .module__repeater-item-image {
@@ -601,6 +644,8 @@ table {
 
 .module__repeater-item-content-sponsor {
   opacity: 0;
+  -webkit-transition: opacity 0.2s;
+          transition: opacity 0.2s;
 }
 
 .module__repeater-item-link {

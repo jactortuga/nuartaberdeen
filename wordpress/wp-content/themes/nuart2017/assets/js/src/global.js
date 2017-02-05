@@ -72,8 +72,10 @@
                         $(this).children('.module__repeater-item-image').velocity(
                             { opacity: 0 },
                             { complete: function() {
-                                $(this).siblings('.module__repeater-item-content').velocity({ opacity: 1 })
-                                $(this).siblings('.module__repeater-item-content').css('z-index', 2)
+                                    $(this).siblings('.module__repeater-item-content').css({
+                                        'opacity': 1,
+                                        'z-index': 2,
+                                    })
                                 }
                             }
                         );
@@ -82,8 +84,10 @@
                         $(this).children('.module__repeater-item-image').velocity(
                             { opacity: 1 },
                             { begin: function() {
-                                    $(this).siblings('.module__repeater-item-content').velocity({ opacity: 0 })
-                                    $(this).siblings('.module__repeater-item-content').css('z-index', 0)
+                                    $(this).siblings('.module__repeater-item-content').css({
+                                        'opacity': 0,
+                                        'z-index': 0
+                                    })
                                 }
                             }
                         );
