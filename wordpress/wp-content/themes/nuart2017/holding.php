@@ -37,13 +37,35 @@ get_header(); ?>
                 $website    = get_sub_field('website');
                 $image      = get_sub_field('image');
             ?>
-                <div class="module__repeater-item">
-                    <?= wp_get_attachment_image($image, 'full', false, array('class' => 'module__repeater-item-image')); ?>
-                    <article class="module__repeater-item-content">
+                <div class="module__repeater-item module__repeater-item-artist">
+                    <?= wp_get_attachment_image($image, 'full', false, array('class' => 'module__repeater-item-image module__repeater-item-image-artist')); ?>
+                    <article class="module__repeater-item-content module__repeater-item-content-artist">
                         <a href="<?= $website ?>" class="module__repeater-item-link" target="_blank">
                             <h1 class="module__repeater-item-title"><?= $name ?></h1>
                         </a>
                         <p class="module__repeater-item-text"><?= $bio ?></p>
+                    </article>
+                </div>
+            <? endwhile; ?>
+        <? endif; ?>
+    </section>
+</div>
+
+<div class="module">
+    <h1 class="module__title module__title--single">Sponsors</h1>
+    <section class="module__repeater module__repeater--sponsors">
+        <? if(have_rows('sponsors')): ?>
+            <? while(have_rows('sponsors')) : the_row();
+                $name       = get_sub_field('name');
+                $website    = get_sub_field('website');
+                $image      = get_sub_field('image');
+            ?>
+                <div class="module__repeater-item module__repeater-item-sponsor">
+                    <?= wp_get_attachment_image($image, 'full', false, array('class' => 'module__repeater-item-image module__repeater-item-image-sponsor')); ?>
+                    <article class="module__repeater-item-content module__repeater-item-content-sponsor">
+                        <a href="<?= $website ?>" class="module__repeater-item-link" target="_blank">
+                            <h1 class="module__repeater-item-title"><?= $name ?></h1>
+                        </a>
                     </article>
                 </div>
             <? endwhile; ?>

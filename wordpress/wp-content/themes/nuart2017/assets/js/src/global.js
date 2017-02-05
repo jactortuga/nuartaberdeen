@@ -17,6 +17,7 @@
         app.setup.init();
         app.hovers.global();
         app.hovers.holdingArtistsDesktop();
+        app.hovers.holdingSponsorsDesktop();
     });
 
     $(window).resize(function() {
@@ -44,7 +45,7 @@
             },
 
             holdingArtistsDesktop : function() {
-                $('.module__repeater-item')
+                $('.module__repeater-item-artist')
                     .on('mouseenter', function() {
                         $(this).children('.module__repeater-item-image').velocity(
                             { opacity: 0 },
@@ -58,6 +59,30 @@
                         $(this).children('.module__repeater-item-image').velocity(
                             { opacity: 1 },
                             { begin: function() {
+                                    $(this).siblings('.module__repeater-item-content').css('z-index', 0)
+                                }
+                            }
+                        );
+                    })
+            },
+
+            holdingSponsorsDesktop : function() {
+                $('.module__repeater-item-sponsor')
+                    .on('mouseenter', function() {
+                        $(this).children('.module__repeater-item-image').velocity(
+                            { opacity: 0 },
+                            { complete: function() {
+                                $(this).siblings('.module__repeater-item-content').velocity({ opacity: 1 })
+                                $(this).siblings('.module__repeater-item-content').css('z-index', 2)
+                                }
+                            }
+                        );
+                    })
+                    .on('mouseleave', function() {
+                        $(this).children('.module__repeater-item-image').velocity(
+                            { opacity: 1 },
+                            { begin: function() {
+                                    $(this).siblings('.module__repeater-item-content').velocity({ opacity: 0 })
                                     $(this).siblings('.module__repeater-item-content').css('z-index', 0)
                                 }
                             }
