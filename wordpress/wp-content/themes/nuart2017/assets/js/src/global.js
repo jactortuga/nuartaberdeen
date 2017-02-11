@@ -14,7 +14,7 @@
 
     $(document).ready(function() {
         console.log('hello world')
-        app.setup.init();
+        app.setup.bxSlider();
         app.hovers.global();
         app.hovers.holdingArtistsDesktop();
         app.hovers.holdingSponsorsDesktop();
@@ -32,8 +32,15 @@
     // App Functions
     var app = {
         setup : {
-            init : function() {
-                $('.bxslider').bxSlider();
+            bxSlider : function() {
+                if($('.module__carousel-container').length) {
+                    $('.module__carousel-container').each(function(index) {
+                        $(this).bxSlider({
+                            adaptiveHeight: true,
+                            pager: false
+                        });
+                    });
+                }  
             },
         },
 

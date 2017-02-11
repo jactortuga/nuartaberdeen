@@ -76,7 +76,7 @@ get_header(); ?>
 </div>
 
 <div class="module">
-    <h1 class="module__title module__title--single">Sponsors</h1>
+    <h1 class="module__title module__title--single">Partners</h1>
     <section class="module__repeater module__repeater--sponsors">
         <? if(have_rows('sponsors')): ?>
             <? while(have_rows('sponsors')) : the_row();

@@ -565,6 +565,20 @@ table {
   width: 100%;
 }
 
+@media screen and (max-width: 600px) {
+  .module__title--artist {
+    font-size: 25px;
+    line-height: 2.8;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .module__title--artist {
+    font-size: 20px;
+    line-height: 3.6;
+  }
+}
+
 .module__link--white {
   color: #FFFFFF;
 }
@@ -855,6 +869,15 @@ table {
   left: 0;
 }
 
+.module__carousel-container {
+  background-color: gold;
+}
+
+.module__carousel-image {
+  width: 100%;
+  height: auto;
+}
+
 .page-template-holding .site-header__nav {
   height: 10px;
 }
@@ -886,4 +909,48 @@ body a.-state-hover {
 .module {
   width: 100%;
   background-color: #FFFFFF;
+}
+
+.bx-wrapper .bx-viewport {
+  left: 0;
+  border: none;
+  box-shadow: none;
+}
+
+.bx-wrapper .bx-controls-direction a {
+  margin-top: -50px;
+  width: 100px;
+  height: 100px;
+}
+
+@media screen and (max-width: 768px) {
+  .bx-wrapper .bx-controls-direction a {
+    margin-top: -40px;
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .bx-wrapper .bx-controls-direction a {
+    margin-top: -20px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.bx-wrapper .bx-prev {
+  background: url(../img/icons/svg/arrow-left.svg) no-repeat;
+}
+
+.bx-wrapper .bx-prev:hover {
+  background-position: -10px 0;
+}
+
+.bx-wrapper .bx-next {
+  background: url(../img/icons/svg/arrow-right.svg) no-repeat;
+}
+
+.bx-wrapper .bx-next:hover {
+  background-position: 10px 0;
 }
