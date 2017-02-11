@@ -3,7 +3,9 @@
     height: $large-spacing;
     overflow: hidden;
     background-color: $purple;
-    position: relative;
+    position: fixed;
+    top: 0;
+    z-index: 100;
 
     &__nav {
         width: 80%;
@@ -12,10 +14,50 @@
         position: relative;
         display: flex;
         justify-content: center;
-        z-index: 1;
+        z-index: 120;
 
         @media screen and (max-width: $small-break) {
             display: none;
+        }
+
+        .site-header__link { 
+            top: 50%;
+            transform: translateY(-50%);
+            @include medium-text($white);
+
+            &:not(:last-of-type) {
+                margin-right: 2%;
+            }
+        }
+
+        .site-header__link--active {
+            // @include italic-text($white, $medium-font);
+        }
+    }
+
+    &__nav-mobile {
+        width: 100%;
+        height: calc(100vh - 80px);
+        top: 80px;
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: $white;
+        z-index: 1;
+        display: none;
+
+        .site-header__link {
+            text-align: center;
+            @include medium-text($purple);
+
+            &:not(:last-of-type) {
+                margin-bottom: 5%;
+            }
+        }
+
+        .site-header__link--active {
+            // @include italic-text($white, $medium-font);
         }
     }
 
@@ -27,14 +69,7 @@
         position: relative;
         display: block;
         height: 26px;
-        top: 50%;
-        transform: translateY(-50%);
         text-transform: uppercase;
-        @include medium-text($white);
-
-        &:not(:last-of-type) {
-            margin-right: 2%;
-        }
     }
 
     &__link--active {

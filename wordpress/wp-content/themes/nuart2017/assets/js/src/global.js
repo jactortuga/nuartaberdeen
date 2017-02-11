@@ -60,8 +60,21 @@
                 $('body').on('click', '#hamburger-menu', function() {
                     if($(this).hasClass('is-active')) {
                         $(this).removeClass('is-active');
+                        $('#mobile-nav').velocity('fadeOut', {
+                            duration: 500,
+                            complete: function() {
+                                $('body').css('overflow', 'initial');
+                            }
+                        });
                     } else {
                         $(this).addClass('is-active');
+                        $('#mobile-nav').velocity('fadeIn', {
+                            duration: 500,
+                            display: 'flex',
+                            begin: function() {
+                                $('body').css('overflow', 'hidden');
+                            }
+                        });
                     }
                 })
             },

@@ -40,7 +40,16 @@ $social_preview = get_field('social_share_image', 'option');
                 'menu'          => 'primary',
                 'walker'        => new Tortuga_Custom_Nav_Menu(),
                 'container'     => false,
-                'items_wrap'    => '<nav class="site-header__nav">%3$s</nav>'
+                'items_wrap'    => '<nav id="full-nav" class="site-header__nav">%3$s</nav>'
+            ));
+        ?>
+
+        <?
+            wp_nav_menu(array(
+                'menu'          => 'primary',
+                'walker'        => new Tortuga_Custom_Nav_Menu(),
+                'container'     => false,
+                'items_wrap'    => '<nav id="mobile-nav" class="site-header__nav-mobile">%3$s</nav>'
             ));
         ?>
 
