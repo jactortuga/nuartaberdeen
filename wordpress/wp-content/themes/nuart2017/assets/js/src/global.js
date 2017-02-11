@@ -15,6 +15,7 @@
     $(document).ready(function() {
         console.log('hello world')
         app.setup.bxSlider();
+        app.setup.subMenuFix();
         app.hovers.global();
         app.hovers.holdingArtistsDesktop();
         app.hovers.holdingSponsorsDesktop();
@@ -42,6 +43,21 @@
                     });
                 }  
             },
+
+            subMenuFix : function() {
+                console.log('CALLING THIS')
+                if($('.site-header__link--submenu').length) {
+                    console.log('EXISTS THIS')
+                    $('.site-header__link--submenu').each(function(index) {
+
+                        console.log('APPEND THIS')
+                        console.log($(this))
+                        console.log($(this).next('.site-header__sub-nav'))
+                        $(this).append($(this).next('.site-header__sub-nav'));
+                    });
+                }
+                
+            }
         },
 
         hovers : {

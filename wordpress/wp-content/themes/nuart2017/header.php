@@ -36,16 +36,12 @@ $social_preview = get_field('social_share_image', 'option');
     <header class="site-header">
 
         <?
-            $custom_menu = array(
-                'menu'              => 'primary',
-                'container'         => 'nav', 
-                'container_class'   => 'site-header__nav', 
-                'echo'              => false,
-                'fallback_cb'       => false,
-                'items_wrap'        => '%3$s',
-                'depth'             => 0
-            );
-            echo strip_tags(wp_nav_menu($custom_menu), '<nav><a>');
+            wp_nav_menu(array(
+                'menu'          => 'primary',
+                'walker'        => new Tortuga_Custom_Nav_Menu(),
+                'container'     => false,
+                'items_wrap'    => '<nav class="site-header__nav">%3$s</nav>'
+            ));
         ?>
 
     </header>

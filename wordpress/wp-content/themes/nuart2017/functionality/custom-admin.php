@@ -305,3 +305,51 @@ if(!$menu_exists) {
     // );
 
 }
+
+
+// SET CUSTOM NAV HTML STRUCTURE
+class Tortuga_Custom_Nav_Menu extends Walker_Nav_Menu {
+
+    public function start_lvl(&$output, $depth = 0, $args = array()) {
+        $output .= '<div class="site-header__sub-nav">';
+    }
+
+    public function end_lvl(&$output, $depth = 0, $args = array()) {
+        $output .= '</div>';
+    }
+
+    public function start_el(&$output, $item, $depth = 0, $args = array(), $id = 0) {
+        $classes = array();
+        
+        if(!empty($item->classes)) {
+            $classes = (array) $item->classes;
+        }
+
+        $active_class   = '';
+        $submenu_class  = '';
+
+        if(in_array('current-menu-item', $classes)) {
+            $active_class = ' site-header__link--active';
+        } else if(in_array('current-menu-parent', $classes)) {
+            $active_class = ' site-header__link--active-parent';
+        } else if(in_array('current-menu-ancestor', $classes)) {
+            $active_class = ' site-header__link--active-ancestor';
+        }
+
+        if(in_array('menu-item-has-children', $classes)) {
+            $submenu_class = ' site-header__link--submenu';
+        }
+
+        $url = '';
+
+        if(!empty( $item->url)) {
+            $url = $item->url;
+        }
+
+        $output .= '<a class="site-header__link'. $active_class . '' . $submenu_class . '" href="' . $url . '">' . $item->title . '</a>';
+    }
+
+    public function end_el(&$output, $item, $depth = 0, $args = array()) {
+        $output .= '</a>';
+    }
+}
