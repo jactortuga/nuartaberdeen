@@ -44,6 +44,12 @@ $social_preview = get_field('social_share_image', 'option');
             ));
         ?>
 
+        <button id="hamburger-menu" class="hamburger hamburger--squeeze">
+            <span class="hamburger-box">
+                <span class="hamburger-inner"></span>
+            </span>
+        </button>
+
     </header>
 
     <main class="site-main">

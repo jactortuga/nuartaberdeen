@@ -16,6 +16,7 @@
         console.log('hello world')
         app.setup.bxSlider();
         app.setup.subMenuFix();
+        app.click.mobileMenu();
         app.hovers.global();
         app.hovers.holdingArtistsDesktop();
         app.hovers.holdingSponsorsDesktop();
@@ -45,19 +46,25 @@
             },
 
             subMenuFix : function() {
-                console.log('CALLING THIS')
                 if($('.site-header__link--submenu').length) {
-                    console.log('EXISTS THIS')
                     $('.site-header__link--submenu').each(function(index) {
-
-                        console.log('APPEND THIS')
-                        console.log($(this))
-                        console.log($(this).next('.site-header__sub-nav'))
                         $(this).append($(this).next('.site-header__sub-nav'));
                     });
                 }
                 
             }
+        },
+
+        click : {
+            mobileMenu : function() {
+                $('body').on('click', '#hamburger-menu', function() {
+                    if($(this).hasClass('is-active')) {
+                        $(this).removeClass('is-active');
+                    } else {
+                        $(this).addClass('is-active');
+                    }
+                })
+            },
         },
 
         hovers : {

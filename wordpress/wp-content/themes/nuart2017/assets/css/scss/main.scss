@@ -1,8 +1,9 @@
 // Reset Stylesheet
 @import 'base/reset';
 
-// BxSlider Stylesheet
+// External Stylesheets
 @import 'base/bxslider';
+@import 'base/hamburger';
 
 //Variables - Fonts - Mixins
 @import 'base/variables';
@@ -44,6 +45,19 @@ body {
 .module {
     width: 100%;
     background-color: $white;
+}
+
+
+.hamburger {
+    position: absolute;
+    right: calc(10% - 15px);
+    top: 50%;
+    transform: translateY(-50%);
+    display: none;
+
+    @media screen and (max-width: $small-break) {
+        display: block;
+    }
 }
 
 
