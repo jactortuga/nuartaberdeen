@@ -1,98 +1,11 @@
 .site-header {
     width: 100%;
 
-    &--image {
-        height: 100vh;
-    }
-
-    &--video {
-        height: auto;
-    }
-
     &__nav {
         width: 100%;
         height: $large-spacing;
         position: relative;
         z-index: 1;
         background-color: $purple;
-    }
-
-    &__logo-container {
-        width: 100%;
-        position: relative;
-        overflow: hidden;
-
-
-
-
-        &--image {
-            height: calc(100% - #{$large-spacing});
-            background-repeat: no-repeat;
-            background-position: center;
-            background-size: cover;
-            background-attachment: fixed;
-
-            @media screen and (min-aspect-ratio: 1/1) {
-                background-position: center top;
-            }
-        }
-
-        &--video {
-            height: auto;
-        }
-    }
-
-    &__video-container {
-        max-width: 100%;
-        height: 0;
-        position: relative;
-        padding-bottom: 56.25%;
-        overflow: hidden;
-        height: auto;
-
-        & iframe, & object, & embed {
-            width: 100%;
-            height: 100%;
-            position: absolute;
-            top: 0;
-            left: 0;  
-        }
-    }
-
-    &__bg-image {
-        width: 100%;
-        height: calc(100% - #{$large-spacing});
-        position: absolute;
-        top: 0;
-    }
-
-    &__logo-image {
-        width: 100%;
-        height: calc(100% - #{$large-spacing});
-        position: absolute;
-        top: 0;
-        z-index: 1;
-
-        @media screen and (min-aspect-ratio: 1/1) {
-            width: 80%;
-            margin: 0 auto;
-            left: 0;
-            right: 0;
-        }
-    }
-
-    &__logo-caption {
-        width: 100%;
-        height: $large-spacing;
-        position: absolute;
-        bottom: 0;
-        background-color: $purple;
-        text-align: center;
-        @include title-text($white);
-
-        @media screen and (max-width: $smallest-break) {
-            font-size: 40px;
-            line-height: 1.6;
-        }
     }
 }

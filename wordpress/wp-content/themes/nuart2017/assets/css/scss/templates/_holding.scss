@@ -9,10 +9,10 @@
                 display: none;
             }
         }
+    }
 
-        &__logo-container {
-            height: calc(100% - 10px);
-        }
+    .subheader {
+        height: calc(100vh - 10px);
     }
 
 

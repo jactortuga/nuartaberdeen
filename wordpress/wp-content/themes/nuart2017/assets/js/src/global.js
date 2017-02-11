@@ -18,6 +18,7 @@
         app.hovers.global();
         app.hovers.holdingArtistsDesktop();
         app.hovers.holdingSponsorsDesktop();
+        app.animations.subheaderLogo();
     });
 
     $(window).resize(function() {
@@ -73,6 +74,7 @@
                             { opacity: 0 },
                             { complete: function() {
                                     $(this).siblings('.module__repeater-item-content').css({
+                                        'display': 'block',
                                         'opacity': 1,
                                         'z-index': 2,
                                     })
@@ -86,15 +88,26 @@
                             { begin: function() {
                                     $(this).siblings('.module__repeater-item-content').css({
                                         'opacity': 0,
-                                        'z-index': 0
+                                        'z-index': 0,
+                                        'display': 'none'
                                     })
                                 }
                             }
                         );
                     })
             }
-        }
+        },
 
+        animations : {
+            subheaderLogo : function() {
+                if($('#subheader-logo').length) {
+                    $('#subheader-logo').velocity(
+                        { opacity: 1 },
+                        { delay: 500, duration: 1000, easing: 'ease-in' }
+                    )
+                }
+            }
+        }
         
     }
 

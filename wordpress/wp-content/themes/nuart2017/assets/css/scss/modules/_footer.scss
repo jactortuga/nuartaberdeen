@@ -1,6 +1,7 @@
 .site-footer {
     width: 100%;
     padding: $large-spacing 0;
+    margin-bottom: 30px;
     background-color: $purple;
 
     @media screen and (max-width: $medium-break) {
@@ -56,6 +57,10 @@
         flex-direction: row;
         flex-wrap: nowrap;
         justify-content: flex-start;
+
+        @media screen and (max-width: $medium-break) {
+            width: calc(100% - #{$large-spacing});
+        }
     }
 
     &__social-link {

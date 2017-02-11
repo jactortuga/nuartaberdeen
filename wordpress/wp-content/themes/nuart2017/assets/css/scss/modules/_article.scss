@@ -10,7 +10,7 @@
         }
 
         @media screen and (max-width: $small-break) {
-            width: 95%;
+            width: 90%;
             margin: 0 auto;
         }
 
@@ -37,7 +37,7 @@
     }
 
     &__article-title--padding {
-        padding-bottom: $large-spacing;
+        padding-bottom: $medium-spacing;
 
         @media screen and (max-width: $medium-break) {
             padding-bottom: $medium-spacing;

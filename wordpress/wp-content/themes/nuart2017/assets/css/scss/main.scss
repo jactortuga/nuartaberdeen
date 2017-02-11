@@ -12,7 +12,9 @@
 
 // Modules Stylesheets
 @import 'modules/header';
+@import 'modules/subheader';
 @import 'modules/footer';
+@import 'modules/credits';
 @import 'modules/title';
 @import 'modules/article';
 @import 'modules/repeater';
@@ -22,6 +24,9 @@
 
 body {
     background-color: $purple;
+    background-color: $white;
+    max-width: 1500px;
+    margin: 0 auto;
 
     a {
         text-decoration: none;
