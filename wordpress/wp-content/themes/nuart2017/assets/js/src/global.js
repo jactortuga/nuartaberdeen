@@ -18,8 +18,11 @@
         app.hovers.global();
         app.hovers.holdingArtistsDesktop();
         app.hovers.holdingSponsorsDesktop();
-        app.animations.subheaderLogo();
     });
+
+    $(window).load(function(){
+        app.animations.subheaderLogo();
+    })
 
     $(window).resize(function() {
 
@@ -36,12 +39,12 @@
 
         hovers : {
             global : function() {
-                $('a')
-                    .on('mouseenter', function() {
-                        $(this).addClass('--hover');
+                $('body')
+                    .on('mouseenter', 'a', function() {
+                        $(this).addClass('-state-hover');
                     })
-                    .on('mouseleave', function() {
-                        $(this).removeClass('--hover');
+                    .on('mouseleave', 'a', function() {
+                        $(this).removeClass('-state-hover');
                     })
             },
 
@@ -103,7 +106,7 @@
                 if($('#subheader-logo').length) {
                     $('#subheader-logo').velocity(
                         { opacity: 1 },
-                        { delay: 500, duration: 1000, easing: 'ease-in' }
+                        { delay: 1000, duration: 1000, easing: 'ease-in' }
                     )
                 }
             }

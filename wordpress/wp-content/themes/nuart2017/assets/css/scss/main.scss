@@ -16,8 +16,10 @@
 @import 'modules/footer';
 @import 'modules/credits';
 @import 'modules/title';
+@import 'modules/link';
 @import 'modules/article';
 @import 'modules/repeater';
+@import 'modules/video';
 
 // Templates Stylesheets
 @import 'templates/holding';
@@ -32,8 +34,8 @@ body {
         text-decoration: none;
         cursor: pointer;
 
-        &.--hover {
-            text-decoration: underline;
+        &.-state-hover {
+            text-decoration: underline !important;
         }
     }
 }

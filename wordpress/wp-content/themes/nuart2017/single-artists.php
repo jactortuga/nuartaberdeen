@@ -16,9 +16,6 @@ $artist_video     = get_field('artist_video');
 get_header(); ?>
 
 
-<h1><?= $artist_name ?></h1>
-<h2><?= $artist_website ?></h2>
-
 <section>
 
     <ul class="bxslider">
@@ -36,20 +33,24 @@ get_header(); ?>
 </section>
 
 
-<section>
+<div class="module">
+    <a href="<?= $artist_website ?>" class="module__link module__link--white" target="_blank">
+        <h1 class="module__title module__title--single"><?= $artist_name ?></h1>
+    </a>
+    <article class="module__article module__article--centered">
+        <div class="module__text-wrapper module__text-wrapper--left">
+            <?= $artist_bio ?>
+        </div>
+    </article>
+</div>
 
-    <div><?= $artist_bio ?></div>
-
-</section>
-
-
-<section>
-
-    <style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; height: auto; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style><div class='embed-container'>
-          <?= $artist_video ?>
+<? if($artist_video): ?>
+    <div class="module">
+        <section class="module__video-container">
+            <?= $artist_video ?>
+        </section>
     </div>
-
-</section>
+<? endif; ?>
 
 
 <? get_footer(); ?>
