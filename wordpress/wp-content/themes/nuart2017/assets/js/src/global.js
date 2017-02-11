@@ -2,15 +2,15 @@
     // globals
     // var touchDev = Modernizr.touch;
 
-    var breakpoint = {
-        'small': 0,
-        'mediumSmall': 440,
-        'medium': 640,
-        'large': 1024,
-        'xlarge': 1200,
-        'xxlarge': 1400,
-        'xxxlarge': 1600,
-    }
+    // var breakpoint = {
+    //     'small': 0,
+    //     'mediumSmall': 440,
+    //     'medium': 640,
+    //     'large': 1024,
+    //     'xlarge': 1200,
+    //     'xxlarge': 1400,
+    //     'xxxlarge': 1600,
+    // }
 
     $(document).ready(function() {
         console.log('hello world')
@@ -28,6 +28,10 @@
 
     $(window).resize(function() {
 
+    });
+
+    $(document).on('scroll', function() {
+        app.setup.menuScroll();
     });
 
 
@@ -52,6 +56,16 @@
                     });
                 }
                 
+            },
+
+            menuScroll: function() {
+                if(!$('body').hasClass('page-template-holding')) {
+                    if($(document).scrollTop() > 80) {
+                        $('#main-header').css('height', 10);
+                    } else {
+                        $('#main-header').css('height', 80);
+                    }
+                }
             }
         },
 
@@ -118,7 +132,7 @@
                     .on('mouseenter', function() {
                         $(this).children('.module__repeater-item-image').velocity(
                             { opacity: 0 },
-                            { complete: function() {
+                            { mobileHA: false, complete: function() {
                                     $(this).siblings('.module__repeater-item-content').css({
                                         'display': 'block',
                                         'opacity': 1,
@@ -131,7 +145,7 @@
                     .on('mouseleave', function() {
                         $(this).children('.module__repeater-item-image').velocity(
                             { opacity: 1 },
-                            { begin: function() {
+                            { mobileHA: false, begin: function() {
                                     $(this).siblings('.module__repeater-item-content').css({
                                         'opacity': 0,
                                         'z-index': 0,

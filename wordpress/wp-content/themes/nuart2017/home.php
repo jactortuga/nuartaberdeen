@@ -24,7 +24,7 @@ get_header(); ?>
 
 <? if(have_posts()) : while(have_posts()) : the_post(); ?>
 
-    <section class="subheader subheader<?= $header_class ?>">
+    <section id="main-subheader" class="subheader subheader<?= $header_class ?>">
         <figure class="subheader__logo-container subheader__logo-container<?= $header_class ?>" style="background-image: url('<?= $header_image ?>')">
             
             <? if(!$header_image && $header_video):?>

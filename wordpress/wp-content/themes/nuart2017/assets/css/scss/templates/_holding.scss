@@ -1,21 +1,24 @@
 .page-template-holding {
 
-    // RESIZE NAV
     .site-header {
         height: 10px;
 
-        &__nav {
-
-            a {
+        &__link {
                 display: none;
-            }
         }
     }
 
-    .subheader {
-        margin-top: 10px;
-        height: calc(100vh - 10px);
+    .hamburger {
+        @media screen and (max-width: $small-break) {
+            display: none;
+        }
     }
 
+    .site-main {
+        padding-top: 10px;
+    }
 
+    .subheader {
+        height: calc(100vh - 10px);
+    }
 }

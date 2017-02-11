@@ -6,6 +6,7 @@
     position: fixed;
     top: 0;
     z-index: 100;
+    transition: height 0.2s;
 
     &__nav {
         width: 80%;
@@ -21,8 +22,7 @@
         }
 
         .site-header__link { 
-            top: 50%;
-            transform: translateY(-50%);
+            top: 27px;
             @include medium-text($white);
 
             &:not(:last-of-type) {

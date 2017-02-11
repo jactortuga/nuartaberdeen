@@ -33,7 +33,7 @@ $social_preview = get_field('social_share_image', 'option');
 
 <body <?php body_class(); ?>>
 
-    <header class="site-header">
+    <header id="main-header" class="site-header">
 
         <?
             wp_nav_menu(array(
@@ -61,4 +61,4 @@ $social_preview = get_field('social_share_image', 'option');
 
     </header>
 
-    <main class="site-main">
+    <main id="main-container" class="site-main">

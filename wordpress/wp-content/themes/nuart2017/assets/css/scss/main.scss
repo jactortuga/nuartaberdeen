@@ -3,7 +3,7 @@
 
 // External Stylesheets
 @import 'base/bxslider';
-@import 'base/hamburger';
+@import 'base/hamburgers-main';
 
 //Variables - Fonts - Mixins
 @import 'base/variables';
@@ -26,6 +26,7 @@
 // Templates Stylesheets
 @import 'templates/holding';
 
+
 body {
     background-color: $purple;
     background-color: $white;
@@ -42,6 +43,13 @@ body {
     }
 }
 
+
+.site-main {
+    background-color: $purple;
+    padding-top: 80px;
+}
+
+
 .module {
     width: 100%;
     background-color: $white;
@@ -49,11 +57,16 @@ body {
 
 
 .hamburger {
+    padding: 16px 15px 13px 15px;
     position: absolute;
+    top: 10px;
     right: calc(10% - 15px);
-    top: 50%;
-    transform: translateY(-50%);
     display: none;
+
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
 
     @media screen and (max-width: $small-break) {
         display: block;
@@ -61,7 +74,6 @@ body {
 }
 
 
-// BX SLIDER CUSTOMIZATION
 .bx-wrapper {
     .bx-viewport {
         left: 0;
@@ -75,6 +87,7 @@ body {
         margin-top: -50px;
         width: 100px;
         height: 100px;
+        z-index: 50;
 
         @media screen and (max-width: $medium-break) {
             margin-top: -40px;
