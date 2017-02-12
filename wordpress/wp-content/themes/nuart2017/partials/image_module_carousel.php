@@ -10,18 +10,15 @@ wp_get_attachment_image($module_image_id, 'full', false, array( 'class' => 'lazy
 
 ?>
 
-<section>
-
-    <ul class="bxslider">
-
-        <? foreach($module_gallery as $module_image):
+<div class="module">
+    <section class="module__carousel-container">
+        <?foreach($module_gallery as $module_image):
             $module_image_id = $module_image['ID'];
         ?>
-    
-            <li><?= wp_get_attachment_image($module_image_id, 'full'); ?></li>
-    
-        <? endforeach; ?>
-
-    </ul>
-
-</section>
+            <div class="module__carousel-slide">
+                <?= wp_get_attachment_image($module_image_id, 'landscape', false, array('class' => 'module__carousel-image')); ?>
+                
+            </div>
+        <?endforeach;?>
+    </section>
+</div>

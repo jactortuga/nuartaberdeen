@@ -8,7 +8,7 @@
  */
 
 $artist_name      = get_the_title();
-$artist_website   = get_field('artist_website');
+$artist_website   = (get_field('artist_website') ? get_field('artist_website') : '#');
 $artist_gallery   = get_field('artist_gallery');
 $artist_bio       = get_field('artist_bio');
 $artist_video     = (get_field('artist_video') ? get_field('artist_video') : false);

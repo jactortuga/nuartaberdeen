@@ -13,13 +13,12 @@
     // }
 
     $(document).ready(function() {
-        console.log('hello world')
         app.setup.bxSlider();
         app.setup.subMenuFix();
         app.click.mobileMenu();
         app.hovers.global();
         app.hovers.holdingArtistsDesktop();
-        app.hovers.holdingSponsorsDesktop();
+        app.hovers.holdingPartnersDesktop();
     });
 
     $(window).load(function(){
@@ -127,8 +126,8 @@
                     })
             },
 
-            holdingSponsorsDesktop : function() {
-                $('.module__repeater-item--sponsor')
+            holdingPartnersDesktop : function() {
+                $('.module__repeater-item--partner')
                     .on('mouseenter', function() {
                         $(this).children('.module__repeater-item-image').velocity(
                             { opacity: 0 },

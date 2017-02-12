@@ -77,16 +77,16 @@ get_header(); ?>
 
 <div class="module">
     <h1 class="module__title module__title--single">Partners</h1>
-    <section class="module__repeater module__repeater--sponsors">
+    <section class="module__repeater module__repeater--partners">
         <? if(have_rows('sponsors')): ?>
             <? while(have_rows('sponsors')) : the_row();
                 $name       = get_sub_field('name');
                 $website    = get_sub_field('website');
                 $image      = get_sub_field('image');
             ?>
-                <div class="module__repeater-item module__repeater-item--sponsor">
-                    <?= wp_get_attachment_image($image, 'full', false, array('class' => 'module__repeater-item-image module__repeater-item-image--sponsor')); ?>
-                    <article class="module__repeater-item-content module__repeater-item-content--sponsor">
+                <div class="module__repeater-item module__repeater-item--partner">
+                    <?= wp_get_attachment_image($image, 'full', false, array('class' => 'module__repeater-item-image module__repeater-item-image--partner')); ?>
+                    <article class="module__repeater-item-content module__repeater-item-content--partner">
                         <a href="<?= $website ?>" class="module__repeater-item-link" target="_blank">
                             <h1 class="module__repeater-item-title"><?= $name ?></h1>
                         </a>

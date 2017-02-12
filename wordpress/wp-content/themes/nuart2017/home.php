@@ -34,7 +34,7 @@ get_header(); ?>
             <? endif; ?>
 
             <? if($header_logo): ?>
-                <?= wp_get_attachment_image($header_logo, 'full', false, array('class' => 'subheader__logo-image')); ?>
+                <?= wp_get_attachment_image($header_logo, 'full', false, array('id' => 'subheader-logo', 'class' => 'subheader__logo-image')); ?>
             <? endif; ?>
 
             <figcaption class="subheader__logo-caption"><?= $header_info ?></figcaption>

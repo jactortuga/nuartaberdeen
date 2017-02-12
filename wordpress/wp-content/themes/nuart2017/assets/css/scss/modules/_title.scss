@@ -8,9 +8,7 @@
 
         &--single {
             width: 100%;
-        }
 
-        &--artist {
             @media screen and (max-width: $small-break) {
                 font-size: $medium-font;
                 line-height: 2.8;

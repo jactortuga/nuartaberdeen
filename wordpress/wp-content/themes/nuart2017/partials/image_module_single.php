@@ -9,8 +9,8 @@ wp_get_attachment_image($module_image_id, 'full', false, array( 'class' => 'lazy
 
 ?>
 
-<section>
-
-    <?= wp_get_attachment_image($module_image_id, 'full'); ?>
-
-</section>
+<div class="module">
+    <section class="module__image-container">
+        <?= wp_get_attachment_image($module_image_id, 'full', false, array('class' => 'module__image')); ?>
+    </section>
+</div>
