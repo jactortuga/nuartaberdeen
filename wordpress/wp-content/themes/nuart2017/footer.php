@@ -13,9 +13,6 @@ $footer_title           = get_field('footer_title', 'option');
 $footer_content_left    = (get_field('footer_content_left', 'option') ? get_field('footer_content_left', 'option') : false);
 $footer_content_right   = (get_field('footer_content_right', 'option') ? get_field('footer_content_right', 'option') : false);
 $mail_address           = (get_field('mail_address', 'option') ? get_field('mail_address', 'option') : false);
-$facebook_link          = (get_field('facebook_link', 'option') ? get_field('facebook_link', 'option') : false);
-$twitter_link           = (get_field('twitter_link', 'option') ? get_field('twitter_link', 'option') : false);
-$instagram_link         = (get_field('instagram_link', 'option') ? get_field('instagram_link', 'option') : false);
 
 
 wp_footer(); ?>
@@ -40,28 +37,11 @@ wp_footer(); ?>
             </section>
         <? endif; ?>
 
-        <? if($mail_address || $facebook_link || $twitter_link || $instagram_link): ?>
+        <? if($mail_address): ?>
             <nav class="site-footer__social-nav">
-                <? if($mail_address): ?>
-                    <a href="mailto:<?= $mail_address ?>" class="site-footer__social-link" target="_blank">
-                        <img src="<?= bloginfo('template_url') ?>/assets/img/icons/svg/mail.svg" class= "site-footer__social-icon">
-                    </a>
-                <? endif; ?>
-                <? if($facebook_link): ?>
-                    <a href="<?= $facebook_link ?>" class="site-footer__social-link" target="_blank">
-                        <img src="<?= bloginfo('template_url') ?>/assets/img/icons/svg/facebook.svg" class= "site-footer__social-icon">
-                    </a>
-                <? endif; ?>
-                <? if($twitter_link): ?>
-                    <a href="<?= $twitter_link ?>" class="site-footer__social-link" target="_blank">
-                        <img src="<?= bloginfo('template_url') ?>/assets/img/icons/svg/twitter.svg" class=" site-footer__social-icon">
-                    </a>
-                <? endif; ?>
-                <? if($instagram_link): ?>
-                    <a href="<?= $instagram_link ?>" class="site-footer__social-link" target="_blank">
-                        <img src="<?= bloginfo('template_url') ?>/assets/img/icons/svg/instagram.svg" class="site-footer__social-icon">
-                    </a>
-                <? endif; ?>
+                <a href="mailto:<?= $mail_address ?>" class="site-footer__social-link" target="_blank">
+                    <img src="<?= bloginfo('template_url') ?>/assets/img/icons/svg/mail.svg" class= "site-footer__social-icon">
+                </a>                
             </nav>
         <? endif; ?>
 

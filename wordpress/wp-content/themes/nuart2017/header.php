@@ -10,6 +10,9 @@
  */
 
 $social_preview = get_field('social_share_image', 'option');
+$facebook_link  = (get_field('facebook_link', 'option') ? get_field('facebook_link', 'option') : false);
+$twitter_link   = (get_field('twitter_link', 'option') ? get_field('twitter_link', 'option') : false);
+$instagram_link = (get_field('instagram_link', 'option') ? get_field('instagram_link', 'option') : false);
 
 ?>
 
@@ -43,6 +46,26 @@ $social_preview = get_field('social_share_image', 'option');
                 'items_wrap'    => '<nav id="full-nav" class="site-header__nav">%3$s</nav>'
             ));
         ?>
+
+        <? if($facebook_link || $twitter_link || $instagram_link): ?>
+            <nav class="site-header__social-nav">
+                <? if($facebook_link): ?>
+                    <a href="<?= $facebook_link ?>" class="site-header__social-link" target="_blank">
+                        <img src="<?= bloginfo('template_url') ?>/assets/img/icons/svg/facebook-circle.svg" class= "site-header__social-icon">
+                    </a>
+                <? endif; ?>
+                <? if($twitter_link): ?>
+                    <a href="<?= $twitter_link ?>" class="site-header__social-link" target="_blank">
+                        <img src="<?= bloginfo('template_url') ?>/assets/img/icons/svg/twitter-circle.svg" class=" site-header__social-icon">
+                    </a>
+                <? endif; ?>
+                <? if($instagram_link): ?>
+                    <a href="<?= $instagram_link ?>" class="site-header__social-link" target="_blank">
+                        <img src="<?= bloginfo('template_url') ?>/assets/img/icons/svg/instagram-circle.svg" class="site-header__social-icon">
+                    </a>
+                <? endif; ?>
+            </nav>
+        <? endif; ?>
 
         <?
             wp_nav_menu(array(

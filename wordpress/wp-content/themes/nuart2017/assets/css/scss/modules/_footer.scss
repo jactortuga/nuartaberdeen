@@ -67,7 +67,7 @@
         width: auto;
         height: 25px;
 
-        &:not(last-of-type) {
+        &:not(:last-of-type) {
             margin-right: $small-spacing;
         }
     }

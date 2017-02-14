@@ -58,12 +58,10 @@
             },
 
             menuScroll: function() {
-                if(!$('body').hasClass('page-template-holding')) {
-                    if($(document).scrollTop() > 80) {
-                        $('#main-header').css('height', 10);
-                    } else {
-                        $('#main-header').css('height', 80);
-                    }
+                if($(document).scrollTop() > 80) {
+                    $('#main-header').css('height', 10);
+                } else {
+                    $('#main-header').css('height', 80);
                 }
             }
         },
