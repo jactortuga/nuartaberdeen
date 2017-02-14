@@ -1,15 +1,6 @@
 <?php
 
-$args = array(
-    'post_type'         => 'artists',
-    'post_status'       => 'publish',
-    'posts_per_page'    => -1,
-    'offset'            => 0,
-    'orderby'           => 'title',
-    'order'             => 'DESC',
-);
-
-$module_artists = get_posts($args);
+$module_artists = get_sub_field('module_artists');
 
 ?>
 
