@@ -18,7 +18,6 @@
         app.click.mobileMenu();
         app.hovers.global();
         app.hovers.holdingArtistsDesktop();
-        app.hovers.holdingPartnersDesktop();
     });
 
     $(window).load(function(){
@@ -118,36 +117,6 @@
                             { opacity: 1 },
                             { begin: function() {
                                     $(this).siblings('.module__repeater-item-content').css('z-index', 0)
-                                }
-                            }
-                        );
-                    })
-            },
-
-            holdingPartnersDesktop : function() {
-                $('.module__repeater-item--partner')
-                    .on('mouseenter', function() {
-                        $(this).children('.module__repeater-item-image').velocity(
-                            { opacity: 0 },
-                            { mobileHA: false, complete: function() {
-                                    $(this).siblings('.module__repeater-item-content').css({
-                                        'display': 'block',
-                                        'opacity': 1,
-                                        'z-index': 2,
-                                    })
-                                }
-                            }
-                        );
-                    })
-                    .on('mouseleave', function() {
-                        $(this).children('.module__repeater-item-image').velocity(
-                            { opacity: 1 },
-                            { mobileHA: false, begin: function() {
-                                    $(this).siblings('.module__repeater-item-content').css({
-                                        'opacity': 0,
-                                        'z-index': 0,
-                                        'display': 'none'
-                                    })
                                 }
                             }
                         );

@@ -1,0 +1,22 @@
+.module {
+
+    &__contact {
+        width: 100%;
+        padding: $large-spacing 0;
+        background-color: $white;
+        text-align: center;
+
+        @media screen and (max-width: $medium-break) {
+            padding: $medium-spacing 0;
+        }
+
+        @media screen and (max-width: $small-break) {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        .pirate_forms_wrap {
+            float: none;
+        }
+    }
+}
