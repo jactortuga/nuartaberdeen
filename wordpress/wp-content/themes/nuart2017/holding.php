@@ -77,10 +77,10 @@ get_header(); ?>
 
 <div id="partners" class="module">
     <section class="module__partners">
-        <h1 class="module__partners-title">Partners</h1>
+        <h1 class="module__partners-title">Supported By</h1>
         <div class="module__partners-repeater">
-        <? if(have_rows('sponsors')): ?>
-            <? while(have_rows('sponsors')) : the_row();
+        <? if(have_rows('supported_by')): ?>
+            <? while(have_rows('supported_by')) : the_row();
                 $name       = get_sub_field('name');
                 $website    = get_sub_field('website');
                 $image      = get_sub_field('image');
@@ -98,10 +98,10 @@ get_header(); ?>
 
 <div id="partners" class="module">
     <section class="module__partners">
-        <h1 class="module__partners-title">Supported By</h1>
+        <h1 class="module__partners-title">Partners</h1>
         <div class="module__partners-repeater">
-        <? if(have_rows('supported_by')): ?>
-            <? while(have_rows('supported_by')) : the_row();
+        <? if(have_rows('sponsors')): ?>
+            <? while(have_rows('sponsors')) : the_row();
                 $name       = get_sub_field('name');
                 $website    = get_sub_field('website');
                 $image      = get_sub_field('image');
