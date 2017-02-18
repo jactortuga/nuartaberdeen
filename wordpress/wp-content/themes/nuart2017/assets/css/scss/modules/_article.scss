@@ -1,5 +1,74 @@
 .module {
 
+    &__double-article {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        wrap: wrap;
+
+        @media screen and (max-width: $medium-break) {
+            flex-direction: column;
+        }
+    }
+
+    &__article-container {
+        width: 50%;
+        background-color: $white;
+
+        @media screen and (max-width: $medium-break) {
+            width: 100%;
+        }
+
+        .module__article {
+            padding: $medium-spacing;
+            box-sizing: border-box;
+
+            @media screen and (max-width: $small-break) {
+                padding: $medium-spacing 0;
+            }
+        }
+
+
+        &--double:first-of-type {
+            background-color: $purple;
+
+            .module__title {
+                background-color: $white;
+                @include title-text($purple);
+
+                @media screen and (max-width: $small-break) {
+                    font-size: $medium-font;
+                    line-height: 2.8;
+                }
+
+                @media screen and (max-width: $smallest-break) {
+                    font-size: $small-font;
+                    line-height: 3.6;
+                }
+            }
+
+            .module__article {
+                background-color: $purple;
+            }
+
+            .module__text-wrapper {
+                @include small-text($white);
+            }
+        }
+
+        &--special:first-of-type {
+            background-color: $purple;
+
+            .module__article {
+                background-color: $purple;
+            }
+
+            .module__text-wrapper {
+                @include small-text($white);
+            }
+        }
+    }
+
     &__article {
         width: 100%;
         padding: $large-spacing 0;

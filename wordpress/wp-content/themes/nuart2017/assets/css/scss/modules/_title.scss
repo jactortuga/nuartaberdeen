@@ -24,5 +24,17 @@
                 line-height: 3.6;
             }
         }
+
+        &--double {
+            &:first-of-type {
+                background-color: $white;
+                @include title-text($purple);
+            }
+
+            &:last-of-type {
+                background-color: $purple;
+                @include title-text($white);
+            }
+        }
     }
 }
