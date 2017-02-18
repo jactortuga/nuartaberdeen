@@ -99,7 +99,7 @@ function tl_scripts() {
 
 	if(!is_admin())
     {
-    	$ver = '18022017A';
+    	$ver = '18022017B';
 
     	wp_enqueue_style('tl-style', get_template_directory_uri() . '/assets/css/main.css', false, $ver);
 
