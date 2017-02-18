@@ -36,11 +36,13 @@ get_header(); ?>
         $module_news_link   = get_the_permalink($module_news_id);
         ?>
             <div class="module__posts-item">
-                <?= wp_get_attachment_image($module_news_image, 'full', false, array('class' => 'module__posts-item-image')); ?>
+                <div class="module__posts-item-image-container">
+                    <?= wp_get_attachment_image($module_news_image, 'full', false, array('class' => 'module__posts-item-image')); ?>
+                </div>
                 <div class="module__posts-item-content">
                     <h1 class="module__posts-item-title"><?= $module_news_title ?></h1>
                     <? if($module_news_intro):?>
-                        <div class="module__posts-item-intro"><?= $module_news_intro ?></div>
+                        <div class="module__posts-item-intro module__posts-item-intro--news"><?= $module_news_intro ?></div>
                     <? endif; ?>
                 </div>
                 <div class="module__posts-item-overlay">
@@ -50,7 +52,5 @@ get_header(); ?>
         <? endforeach; ?>
     </section>
 </div>
-
-
 
 <?php get_footer(); ?>

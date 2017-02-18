@@ -24,23 +24,33 @@ $module_press_list = wp_get_recent_posts($args);
 
 get_header(); ?>
 
-<h1>Press Category Posts</h1>
-
-<? foreach($module_press_list as $module_press):
-    $module_press_id     = $module_press['ID'];
-    $module_press_title  = get_the_title($module_press_id);
-    $module_press_date   = get_the_date('d/m/y', $module_press_id);;
-    $module_press_intro  = get_field('introduction', $module_press_id);
-    $module_press_image  = get_post_thumbnail_id($module_press_id);
-    $module_press_link   = get_the_permalink($module_press_id);
-?>
-
-    <h1><?= $module_press_title ?></h1>
-    <h2><?= $module_press_date ?></h2>
-    <div><?= $module_press_intro ?></div>
-    <a href="<?= $module_press_link ?>"><?= $module_press_link ?></a>
-    <?= wp_get_attachment_image($module_press_image, 'full'); ?>
-
-<? endforeach; ?>
+<div class="module">
+    <h1 class="module__title module__title--single module__title--alt">Press</h1>
+    <section class="module__posts">
+        <? foreach($module_press_list as $module_press):
+            $module_press_id     = $module_press['ID'];
+            $module_press_title  = get_the_title($module_press_id);
+            $module_press_date   = get_the_date('d/m/y', $module_press_id);;
+            $module_press_intro  = (get_field('introduction', $module_press_id) ? get_field('introduction', $module_press_id) : false);
+            $module_press_image  = get_post_thumbnail_id($module_press_id);
+            $module_press_link   = get_the_permalink($module_press_id);
+        ?>
+            <div class="module__posts-item">
+                <div class="module__posts-item-image-container">
+                    <?= wp_get_attachment_image($module_press_image, 'full', false, array('class' => 'module__posts-item-image')); ?>
+                </div>
+                <div class="module__posts-item-content">
+                    <? if($module_press_intro):?>
+                        <div class="module__posts-item-intro module__posts-item-intro--press"><?= $module_press_intro ?></div>
+                    <? endif; ?>
+                    <p class="module__posts-item-date"><?= $module_press_date ?></p>
+                </div>
+                <div class="module__posts-item-overlay">
+                    <a href="<?= $module_press_link ?>" class="module__posts-item-link">Read More</a>
+                </div>
+            </div>
+        <? endforeach; ?>
+    </section>
+</div>
 
 <?php get_footer(); ?>

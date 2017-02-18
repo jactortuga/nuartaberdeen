@@ -837,6 +837,14 @@ table {
   color: #FFFFFF;
 }
 
+.module__title--alt {
+  background-color: #FFFFFF;
+  font-family: 'GraniteHeadline-Regular', Helvetica, Arial, sans-serif;
+  font-size: 48px;
+  line-height: 1.3;
+  color: #743BBD;
+}
+
 .module__title--single {
   width: 100%;
 }
@@ -853,14 +861,6 @@ table {
     font-size: 20px;
     line-height: 3.6;
   }
-}
-
-.module__title--alt {
-  background-color: #FFFFFF;
-  font-family: 'GraniteHeadline-Regular', Helvetica, Arial, sans-serif;
-  font-size: 48px;
-  line-height: 1.3;
-  color: #743BBD;
 }
 
 .module__link--white {
@@ -903,6 +903,12 @@ table {
   text-align: left;
 }
 
+@media screen and (max-width: 320px) {
+  .module__text-wrapper {
+    font-size: 18px;
+  }
+}
+
 .module__article-title {
   font-family: 'GraniteHeadline-Regular', Helvetica, Arial, sans-serif;
   font-size: 48px;
@@ -931,6 +937,12 @@ table {
 @media screen and (max-width: 768px) {
   .module__article-title--padding {
     padding-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .module__article-title--padding {
+    padding-bottom: 10px;
   }
 }
 
@@ -1182,7 +1194,7 @@ table {
   background-color: #743BBD;
 }
 
-.module__posts-item:nth-of-type(4n+4) .module__posts-item-image, .module__posts-item:nth-of-type(4n+3) .module__posts-item-image {
+.module__posts-item:nth-of-type(4n+4) .module__posts-item-image-container, .module__posts-item:nth-of-type(4n+3) .module__posts-item-image-container {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
@@ -1198,7 +1210,7 @@ table {
   .module__posts-item {
     width: 100%;
   }
-  .module__posts-item:nth-of-type(4n+4) .module__posts-item-image, .module__posts-item:nth-of-type(4n+3) .module__posts-item-image {
+  .module__posts-item:nth-of-type(4n+4) .module__posts-item-image-container, .module__posts-item:nth-of-type(4n+3) .module__posts-item-image-container {
     -webkit-box-ordinal-group: 2;
         -ms-flex-order: 1;
             order: 1;
@@ -1208,7 +1220,7 @@ table {
         -ms-flex-order: 2;
             order: 2;
   }
-  .module__posts-item:nth-of-type(2n+0) .module__posts-item-image {
+  .module__posts-item:nth-of-type(2n+0) .module__posts-item-image-container {
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
@@ -1220,15 +1232,18 @@ table {
   }
 }
 
+.module__posts-item-image-container {
+  width: 50%;
+}
+
 .module__posts-item-image {
   display: block;
-  width: 50%;
-  height: 100%;
+  width: 100%;
+  height: auto;
 }
 
 .module__posts-item-content {
   width: 50%;
-  height: 100%;
   padding: 20px;
   box-sizing: border-box;
   display: -webkit-box;
@@ -1261,17 +1276,82 @@ table {
   }
 }
 
-.module__posts-item-intro {
+.module__posts-item-intro--news {
   padding-top: 20px;
+  font-size: 18px;
   font-family: 'NeueHaasUnicaPro-Regular', Helvetica, Arial, sans-serif;
   font-size: 20px;
   line-height: 1.2;
   color: #FFFFFF;
-  font-size: 18px;
 }
 
 @media screen and (max-width: 950px) {
-  .module__posts-item-intro {
+  .module__posts-item-intro--news {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .module__posts-item-intro--news {
+    display: initial;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .module__posts-item-intro--news {
+    display: none;
+  }
+}
+
+.module__posts-item-intro--press {
+  padding-bottom: 20px;
+  font-size: 18px;
+  font-family: 'NeueHaasUnicaPro-Regular', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 950px) {
+  .module__posts-item-intro--press {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .module__posts-item-intro--press {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .module__posts-item-intro--press {
+    padding-bottom: 0;
+  }
+}
+
+.module__posts-item-date {
+  font-size: 18px;
+  font-family: 'NeueHaasUnicaPro-Regular', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #FFFFFF;
+}
+
+@media screen and (max-width: 950px) {
+  .module__posts-item-date {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .module__posts-item-date {
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .module__posts-item-date {
     display: none;
   }
 }

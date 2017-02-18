@@ -6,6 +6,11 @@
         text-align: center;
         @include title-text($white);
 
+        &--alt {
+            background-color: $white;
+            @include title-text($purple);
+        }
+
         &--single {
             width: 100%;
 
@@ -18,11 +23,6 @@
                 font-size: $small-font;
                 line-height: 3.6;
             }
-        }
-
-        &--alt {
-            background-color: $white;
-            @include title-text($purple);
         }
     }
 }

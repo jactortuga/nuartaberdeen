@@ -19,7 +19,7 @@
 
         &:nth-of-type(4n+4),
         &:nth-of-type(4n+3), {
-            .module__posts-item-image {
+            .module__posts-item-image-container {
                 order: 2;
             }
 
@@ -33,7 +33,7 @@
 
             &:nth-of-type(4n+4),
             &:nth-of-type(4n+3), {
-                .module__posts-item-image {
+                .module__posts-item-image-container {
                     order: 1;
                 }
 
@@ -43,7 +43,7 @@
             }
 
             &:nth-of-type(2n+0), {
-                .module__posts-item-image {
+                .module__posts-item-image-container {
                     order: 2;
                 }
 
@@ -54,15 +54,18 @@
         }
     }
 
+    &__posts-item-image-container {
+        width: 50%;
+    }
+
     &__posts-item-image {
         display: block;
-        width: 50%;
-        height: 100%;
+        width: 100%;
+        height: auto;
     }
 
     &__posts-item-content {
         width: 50%;
-        height: 100%;
         padding: $small-spacing;
         box-sizing: border-box;
         display: flex;
@@ -81,11 +84,57 @@
     }
 
     &__posts-item-intro {
-        padding-top: $small-spacing;
-        @include small-text($white);
+
+        &--news {
+            padding-top: $small-spacing;
+            font-size: $tiny-font;
+            @include small-text($white);
+
+            @media screen and (max-width: $large-break) {
+                display: none;
+            }
+
+            @media screen and (max-width: $medium-break) {
+                display: initial;
+            }
+
+            @media screen and (max-width: $small-break) {
+                display: none;
+            }
+        }
+
+        &--press {
+            padding-bottom: $small-spacing;
+            font-size: $tiny-font;
+            @include small-text($white);
+
+            @media screen and (max-width: $large-break) {
+                font-size: 16px;
+            }
+
+            @media screen and (max-width: $medium-break) {
+                font-size: $tiny-font;
+            }
+
+            @media screen and (max-width: $smallest-break) {
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    &__posts-item-date {
         font-size: $tiny-font;
+        @include small-text($white);
 
         @media screen and (max-width: $large-break) {
+            font-size: 16px;
+        }
+
+        @media screen and (max-width: $medium-break) {
+            font-size: $tiny-font;
+        }
+
+        @media screen and (max-width: $smallest-break) {
             display: none;
         }
     }

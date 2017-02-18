@@ -1,12 +1,13 @@
 <?php
 
+$module_title   = get_sub_field('module_title');
 $module_artists = get_sub_field('module_artists');
 
 ?>
 
 
 <div id="artists" class="module">
-    <h1 class="module__title module__title--single">Artists</h1>
+    <h1 class="module__title module__title--single"><?= $module_title ?></h1>
     <section class="module__repeater module__repeater--artists">
         <? foreach($module_artists as $module_artist):
             $module_artist_id       = $module_artist->ID;

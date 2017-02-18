@@ -28,11 +28,13 @@ $module_news_list   = wp_get_recent_posts($args);
         $module_news_link   = get_the_permalink($module_news_id);
         ?>
             <div class="module__posts-item">
-                <?= wp_get_attachment_image($module_news_image, 'full', false, array('class' => 'module__posts-item-image')); ?>
+                <div class="module__posts-item-image-container">
+                    <?= wp_get_attachment_image($module_news_image, 'full', false, array('class' => 'module__posts-item-image')); ?>
+                </div>
                 <div class="module__posts-item-content">
                     <h1 class="module__posts-item-title"><?= $module_news_title ?></h1>
                     <? if($module_news_intro):?>
-                        <div class="module__posts-item-intro"><?= $module_news_intro ?></div>
+                        <div class="module__posts-item-intro module__posts-item-intro--news"><?= $module_news_intro ?></div>
                     <? endif; ?>
                 </div>
                 <div class="module__posts-item-overlay">
@@ -42,15 +44,3 @@ $module_news_list   = wp_get_recent_posts($args);
         <? endforeach; ?>
     </section>
 </div>
-
-
-<?php /*
-<a href="<?= $partner_website ?>" class="module__partners-item-link" target="_blank">
-    <?= wp_get_attachment_image($partner_logo, 'full', false, array('class' => 'module__partners-item-image')); ?>
-</a>
-
-<h2><?= $module_news_date ?></h2>
-
-<a href="<?=  ?>"><?= $module_news_link ?></a>
-
-*/ ?>

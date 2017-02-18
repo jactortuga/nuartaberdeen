@@ -28,6 +28,10 @@
         &--left {
             text-align: left;
         }
+
+        @media screen and (max-width: $smallest-break) {
+            font-size: $tiny-font;
+        }
     }
 
 
@@ -51,6 +55,10 @@
 
         @media screen and (max-width: $medium-break) {
             padding-bottom: $small-spacing;
+        }
+
+        @media screen and (max-width: $smallest-break) {
+            padding-bottom: $tiny-spacing;
         }
     }
 }
