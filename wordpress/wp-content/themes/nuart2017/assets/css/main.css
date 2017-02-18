@@ -659,10 +659,17 @@ table {
   color: #FFFFFF;
 }
 
+@media screen and (max-width: 600px) {
+  .subheader__logo-caption {
+    font-size: 25px;
+    line-height: 2.8;
+  }
+}
+
 @media screen and (max-width: 320px) {
   .subheader__logo-caption {
-    font-size: 40px;
-    line-height: 1.6;
+    font-size: 20px;
+    line-height: 3.6;
   }
 }
 
@@ -961,6 +968,12 @@ table {
   font-size: 20px;
   line-height: 1.2;
   color: #FFFFFF;
+}
+
+@media screen and (max-width: 320px) {
+  .module__article-container--double:first-of-type .module__text-wrapper {
+    font-size: 18px;
+  }
 }
 
 .module__article-container--special:first-of-type {

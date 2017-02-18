@@ -53,6 +53,10 @@
 
             .module__text-wrapper {
                 @include small-text($white);
+
+                @media screen and (max-width: $smallest-break) {
+                    font-size: $tiny-font;
+                }
             }
         }
 
