@@ -1619,6 +1619,19 @@ _::-webkit-:not(:root:root), .module__partners-title {
   float: none;
 }
 
+.module__divider {
+  width: 100%;
+  height: 80px;
+}
+
+.module__divider--white {
+  background-color: #FFFFFF;
+}
+
+.module__divider--primary {
+  background-color: #743BBD;
+}
+
 .page-template-holding .site-header__nav {
   display: none;
 }
