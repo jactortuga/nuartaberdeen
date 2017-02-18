@@ -17,7 +17,8 @@
         app.setup.subMenuFix();
         app.click.mobileMenu();
         app.hovers.global();
-        app.hovers.holdingArtistsDesktop();
+        app.hovers.artistsModule();
+        app.hovers.postsModule();
     });
 
     $(window).load(function(){
@@ -101,7 +102,7 @@
                     })
             },
 
-            holdingArtistsDesktop : function() {
+            artistsModule : function() {
                 $('.module__repeater-item--artist')
                     .on('mouseenter', function() {
                         $(this).children('.module__repeater-item-image').velocity(
@@ -120,6 +121,16 @@
                                 }
                             }
                         );
+                    })
+            },
+
+            postsModule : function() {
+                $('.module__posts-item')
+                    .on('mouseenter', function() {
+                        $(this).children('.module__posts-item-overlay').velocity('fadeIn', { display: 'flex' });
+                    })
+                    .on('mouseleave', function() {
+                        $(this).children('.module__posts-item-overlay').velocity('fadeOut');
                     })
             }
         },

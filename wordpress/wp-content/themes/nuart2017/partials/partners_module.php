@@ -5,7 +5,7 @@ $module_partners    = get_sub_field('module_partners');
 
 ?>
 
-<div id="partners" class="module">
+<div class="module">
     <section class="module__partners">
         <h1 class="module__partners-title"><?= $module_title ?></h1>
         <div class="module__partners-repeater">

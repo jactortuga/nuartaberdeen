@@ -19,5 +19,10 @@
                 line-height: 3.6;
             }
         }
+
+        &--alt {
+            background-color: $white;
+            @include title-text($purple);
+        }
     }
 }

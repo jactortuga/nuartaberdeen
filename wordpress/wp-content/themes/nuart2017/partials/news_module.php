@@ -10,27 +10,47 @@ $args = array(
     'suppress_filters'  => true 
 );
 
-$module_news_list = wp_get_recent_posts($args);
+$module_title       = get_sub_field('module_title');
+$module_news_list   = wp_get_recent_posts($args);
 
 ?>
 
-<section>
 
-    <? foreach($module_news_list as $module_news):
+<div class="module">
+    <h1 class="module__title module__title--single module__title--alt"><?= $module_title ?></h1>
+    <section class="module__posts">
+        <? foreach($module_news_list as $module_news):
         $module_news_id     = $module_news['ID'];
         $module_news_title  = get_the_title($module_news_id);
         $module_news_date   = get_the_date('d/m/y', $module_news_id);;
-        $module_news_intro  = get_field('introduction', $module_news_id);
+        $module_news_intro  = (get_field('introduction', $module_news_id) ? get_field('introduction', $module_news_id) : false);
         $module_news_image  = get_post_thumbnail_id($module_news_id);
         $module_news_link   = get_the_permalink($module_news_id);
-    ?>
+        ?>
+            <div class="module__posts-item">
+                <?= wp_get_attachment_image($module_news_image, 'full', false, array('class' => 'module__posts-item-image')); ?>
+                <div class="module__posts-item-content">
+                    <h1 class="module__posts-item-title"><?= $module_news_title ?></h1>
+                    <? if($module_news_intro):?>
+                        <div class="module__posts-item-intro"><?= $module_news_intro ?></div>
+                    <? endif; ?>
+                </div>
+                <div class="module__posts-item-overlay">
+                    <a href="<?= $module_news_link ?>" class="module__posts-item-link">Read More</a>
+                </div>
+            </div>
+        <? endforeach; ?>
+    </section>
+</div>
 
-        <h1><?= $module_news_title ?></h1>
-        <h2><?= $module_news_date ?></h2>
-        <div><?= $module_news_intro ?></div>
-        <a href="<?= $module_news_link ?>"><?= $module_news_link ?></a>
-        <?= wp_get_attachment_image($module_news_image, 'full'); ?>
-    
-    <? endforeach; ?>
 
-</section>
+<?php /*
+<a href="<?= $partner_website ?>" class="module__partners-item-link" target="_blank">
+    <?= wp_get_attachment_image($partner_logo, 'full', false, array('class' => 'module__partners-item-image')); ?>
+</a>
+
+<h2><?= $module_news_date ?></h2>
+
+<a href="<?=  ?>"><?= $module_news_link ?></a>
+
+*/ ?>

@@ -34,13 +34,23 @@
 
     &__article-title {
         @include title-text($purple);
+
+        @media screen and (max-width: $small-break) {
+            font-size: $medium-font;
+            line-height: 2.8;
+        }
+
+        @media screen and (max-width: $smallest-break) {
+            font-size: $small-font;
+            line-height: 3.6;
+        }
     }
 
     &__article-title--padding {
         padding-bottom: $medium-spacing;
 
         @media screen and (max-width: $medium-break) {
-            padding-bottom: $medium-spacing;
+            padding-bottom: $small-spacing;
         }
     }
 }
