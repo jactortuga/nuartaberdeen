@@ -53,4 +53,8 @@ get_header(); ?>
     </section>
 </div>
 
+<div class="module">
+    <div class="module__divider module__divider--white"></div>
+</div>
+
 <?php get_footer(); ?>
