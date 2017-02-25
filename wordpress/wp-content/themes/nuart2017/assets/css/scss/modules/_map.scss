@@ -1,0 +1,11 @@
+.module {
+
+    &__map {
+        width: 100%;
+        height: calc(100vh - #{$tiny-spacing});
+    }
+
+    &__map-info-container {
+        display: none;
+    }
+}

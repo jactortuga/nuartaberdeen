@@ -19,6 +19,7 @@
         app.hovers.global();
         app.hovers.artistsModule();
         app.hovers.postsModule();
+        google.maps.event.addDomListener(window, 'load', app.map.init);
     });
 
     $(window).load(function(){
@@ -144,8 +145,61 @@
                     )
                 }
             }
+        },
+
+        map: {
+
+            map: false,
+            markers: [],
+            bounds: false,
+
+            init : function() {
+                app.map.map = new google.maps.Map(document.getElementById('map'), {
+                    center: {lat: 57.154319, lng: -2.109757},
+                    zoom: 8,
+                    scrollwheel: false,
+                });
+
+                // this.makers = [];
+                console.log('what is this? 1')
+                console.log(this)
+                console.log(this.map)
+
+                app.map.setMarkers();
+            },
+
+            setMarkers : function() {
+                console.log('what is this? 2')
+                console.log(this)
+                console.log(this.map)
+                console.log(app.map.map)
+                console.log(app.map.init.map)
+
+                $('.module__map-info').each(function(index) {
+                    var marker = new google.maps.Marker({
+                        map: app.map.map,
+                        title: $(this).data('name'),
+                        position: { lat: $(this).data('lat'), lng: $(this).data('lng') }
+                    })
+                    app.map.markers.push(marker);
+                    // console.log('looooopinz')
+                    // console.log($(this).data('name'));
+                    // console.log($(this).data('lat'));
+                    // console.log($(this).data('lng'));
+
+                    app.map.setZoom();
+                });
+            },
+
+            setZoom : function() {
+                app.map.bounds = app.map.markers.reduce(function(bounds, marker) {
+                    return bounds.extend(marker.getPosition());
+                }, new google.maps.LatLngBounds());
+
+                app.map.map.setCenter(app.map.bounds.getCenter());
+                app.map.map.fitBounds(app.map.bounds);
+            }
         }
-        
     }
 
 
