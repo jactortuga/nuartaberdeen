@@ -78,6 +78,10 @@ body {
         box-shadow: none;
     }
 
+    &.brown {
+        background-color: red;
+    }
+
     @media screen and (max-width: $large-break) {
         display: block;
     }

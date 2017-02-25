@@ -16,10 +16,14 @@
         app.setup.bxSlider();
         app.setup.subMenuFix();
         app.click.mobileMenu();
+        app.click.mobileLinks();
         app.hovers.global();
         app.hovers.artistsModule();
         app.hovers.postsModule();
-        google.maps.event.addDomListener(window, 'load', app.map.init);
+
+        if($('body').hasClass('page-template-home')) {
+            google.maps.event.addDomListener(window, 'load', app.map.init);
+        }
     });
 
     $(window).load(function(){
@@ -76,6 +80,8 @@
                             duration: 500,
                             complete: function() {
                                 $('body').css('overflow', 'initial');
+                                $('body').css('position', 'initial');
+                                $('#main-header').css('overflow', 'hidden');
                             }
                         });
                     } else {
@@ -85,11 +91,29 @@
                             display: 'flex',
                             begin: function() {
                                 $('body').css('overflow', 'hidden');
+                                $('body').css('position', 'fixed');
+                                $('#main-header').css('overflow', 'initial');
                             }
                         });
                     }
                 })
             },
+
+            mobileLinks : function() {
+                $('body').on('click', '#mobile-nav .site-header__link', function() {
+                    if($('#hamburger-menu').hasClass('is-active') && $(this).attr('href').indexOf('#') > -1 && window.location.href.indexOf($(this).attr('href').split('#')[0]) > -1) {
+                        $('#hamburger-menu').removeClass('is-active');
+                        $('#mobile-nav').velocity('fadeOut', {
+                            duration: 500,
+                            begin: function() {
+                                    $('body').css('overflow', 'initial');
+                                    $('body').css('position', 'initial');
+                                    $('#main-header').css('overflow', 'hidden');
+                            }
+                        });
+                    }
+                });
+            }
         },
 
         hovers : {
