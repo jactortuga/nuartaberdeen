@@ -1651,6 +1651,35 @@ _::-webkit-:not(:root:root), .module__partners-title {
   height: calc(100vh - 10px);
 }
 
+.module__map-box-title {
+  font-family: 'NeueHaasUnicaPro-Regular', Helvetica, Arial, sans-serif;
+  font-size: 25px;
+  line-height: 1.2;
+  color: #000000;
+}
+
+.module__map-box-description {
+  margin: 10px 0;
+  font-family: 'NeueHaasUnicaPro-Regular', Helvetica, Arial, sans-serif;
+  font-size: 20px;
+  line-height: 1.2;
+  color: #000000;
+  font-size: 16px;
+}
+
+.module__map-box-image {
+  width: 100%;
+  height: auto;
+}
+
+.module__map-info-container {
+  display: none;
+}
+
+.module__map-info {
+  display: none;
+}
+
 .page-template-holding .site-header__nav {
   display: none;
 }

@@ -151,44 +151,44 @@
 
             map: false,
             markers: [],
+            infoWindow: false,
             bounds: false,
 
             init : function() {
                 app.map.map = new google.maps.Map(document.getElementById('map'), {
-                    center: {lat: 57.154319, lng: -2.109757},
-                    zoom: 8,
+                    center: {lat: $('#map-info').data('lat'), lng: $('#map-info').data('lng')},
+                    zoom: 14,
                     scrollwheel: false,
                 });
-
-                // this.makers = [];
-                console.log('what is this? 1')
-                console.log(this)
-                console.log(this.map)
-
+                app.map.infoWindow = new google.maps.InfoWindow({ maxWidth: 400 });
                 app.map.setMarkers();
             },
 
             setMarkers : function() {
-                console.log('what is this? 2')
-                console.log(this)
-                console.log(this.map)
-                console.log(app.map.map)
-                console.log(app.map.init.map)
-
                 $('.module__map-info').each(function(index) {
                     var marker = new google.maps.Marker({
                         map: app.map.map,
                         title: $(this).data('name'),
                         position: { lat: $(this).data('lat'), lng: $(this).data('lng') }
                     })
-                    app.map.markers.push(marker);
-                    // console.log('looooopinz')
-                    // console.log($(this).data('name'));
-                    // console.log($(this).data('lat'));
-                    // console.log($(this).data('lng'));
 
-                    app.map.setZoom();
+                    app.map.markers.push(marker);
+
+                    var infoContent = '<div class="module__map-box">' +
+                        '<h1 class="module__map-box-title">' + $(this).data('name') + '</h1>' +
+                        '<div class="module__map-box-body">' +
+                        '<p class="module__map-box-description">' + $(this).data('info') + '</p>' +
+                        '<img src="' + $(this).data('image') + '" class="module__map-box-image"' +
+                        '</div>' + '</div>';
+
+                    marker.addListener('click', function() {
+                        app.map.infoWindow.setContent(infoContent);
+                        app.map.infoWindow.open(map, marker);
+                        app.map.map.setCenter(marker.getPosition());
+                    });
                 });
+
+                app.map.setZoom();
             },
 
             setZoom : function() {
