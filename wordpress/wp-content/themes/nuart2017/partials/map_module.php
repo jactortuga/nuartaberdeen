@@ -1,14 +1,16 @@
 <?php
 
-$map_center_lat = get_sub_field('map_center_latitude');
-$map_center_lng = get_sub_field('map_center_longitude');
-$map_locations  = get_sub_field('map_locations');
+$map_center_lat     = get_sub_field('map_center_latitude');
+$map_center_lng     = get_sub_field('map_center_longitude');
+$map_custom_style   = get_sub_field('map_custom_style');
+$map_custom_marker  = get_sub_field('map_custom_marker');
+$map_locations      = get_sub_field('map_locations');
 
 ?>
 
 <div class="module">
     <section class="module__map" id="map"></section>
-    <div id="map-info" class="module__map-info-container" data-lat="<?= $map_center_lat ?>" data-lng="<?= $map_center_lng ?>">
+    <div id="map-info" class="module__map-info-container" data-lat="<?= $map_center_lat ?>" data-lng="<?= $map_center_lng ?>" data-style='<?= $map_custom_style ?>' data-marker="<?= $map_custom_marker ?>">
         <? foreach($map_locations as $map_location):
             $map_locations_name         = $map_location['location_name'];
             $map_location_latitude      = $map_location['location_latitude'];

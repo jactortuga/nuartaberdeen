@@ -1658,6 +1658,15 @@ _::-webkit-:not(:root:root), .module__partners-title {
   color: #000000;
 }
 
+@media screen and (max-width: 768px) {
+  .module__map-box-title {
+    font-family: 'NeueHaasUnicaPro-Regular', Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    line-height: 1.2;
+    color: #000000;
+  }
+}
+
 .module__map-box-description {
   margin: 10px 0;
   font-family: 'NeueHaasUnicaPro-Regular', Helvetica, Arial, sans-serif;
@@ -1670,6 +1679,12 @@ _::-webkit-:not(:root:root), .module__partners-title {
 .module__map-box-image {
   width: 100%;
   height: auto;
+}
+
+@media screen and (max-width: 950px) {
+  .module__map-box-image {
+    width: 80%;
+  }
 }
 
 .module__map-info-container {

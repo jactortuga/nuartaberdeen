@@ -11,6 +11,10 @@
 
     &__map-box-title {
         @include medium-text($black);
+
+        @media screen and (max-width: $medium-break) {
+            @include small-text($black);
+        }
     }
 
     &__map-box-body {
@@ -26,6 +30,10 @@
     &__map-box-image {
         width: 100%;
         height: auto;
+
+        @media screen and (max-width: $large-break) {
+            width: 80%;
+        }
     }
 
     &__map-info-container {

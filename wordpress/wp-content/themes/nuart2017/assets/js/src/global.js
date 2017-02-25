@@ -148,7 +148,6 @@
         },
 
         map: {
-
             map: false,
             markers: [],
             infoWindow: false,
@@ -159,8 +158,12 @@
                     center: {lat: $('#map-info').data('lat'), lng: $('#map-info').data('lng')},
                     zoom: 14,
                     scrollwheel: false,
+                    styles: $('#map-info').data('style'),
                 });
                 app.map.infoWindow = new google.maps.InfoWindow({ maxWidth: 400 });
+                app.map.infoWindow.addListener('closeclick', function() {
+                    app.map.setZoom();
+                });
                 app.map.setMarkers();
             },
 
@@ -169,7 +172,8 @@
                     var marker = new google.maps.Marker({
                         map: app.map.map,
                         title: $(this).data('name'),
-                        position: { lat: $(this).data('lat'), lng: $(this).data('lng') }
+                        position: { lat: $(this).data('lat'), lng: $(this).data('lng') },
+                        icon: $('#map-info').data('marker')
                     })
 
                     app.map.markers.push(marker);
