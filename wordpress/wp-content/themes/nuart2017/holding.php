@@ -75,7 +75,7 @@ get_header(); ?>
     </section>
 </div>
 
-<div id="partners" class="module">
+<div class="module">
     <section class="module__partners">
         <h1 class="module__partners-title">Supported By</h1>
         <div class="module__partners-repeater">
@@ -96,7 +96,7 @@ get_header(); ?>
     </section>
 </div>
 
-<div id="partners" class="module">
+<div class="module">
     <section class="module__partners">
         <h1 class="module__partners-title">Partners</h1>
         <div class="module__partners-repeater">
@@ -117,7 +117,7 @@ get_header(); ?>
     </section>
 </div>
 
-<div id="partners" class="module">
+<div class="module">
     <section class="module__partners">
         <h1 class="module__partners-title">Media Partners</h1>
         <div class="module__partners-repeater">

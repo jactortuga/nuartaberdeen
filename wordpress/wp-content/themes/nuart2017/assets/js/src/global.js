@@ -15,13 +15,14 @@
     $(document).ready(function() {
         app.setup.bxSlider();
         app.setup.subMenuFix();
+        app.setup.partnersModules();
         app.click.mobileMenu();
         app.click.mobileLinks();
         app.hovers.global();
         app.hovers.artistsModule();
         app.hovers.postsModule();
 
-        if($('body').hasClass('page-template-home')) {
+        if($('.module__map').length) {
             google.maps.event.addDomListener(window, 'load', app.map.init);
         }
     });
@@ -62,13 +63,20 @@
                 
             },
 
-            menuScroll: function() {
+            menuScroll : function() {
                 if($(document).scrollTop() > 80) {
                     $('#main-header').css('height', 10);
                 } else {
                     $('#main-header').css('height', 80);
                 }
-            }
+            },
+
+            partnersModules : function() {
+                if($('.module__partners').length) {
+                    $('.module__partners:first').addClass('-state-first');
+                    $('.module__partners:last').addClass('-state-last');
+                }
+            },
         },
 
         click : {

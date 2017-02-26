@@ -1,5 +1,6 @@
 .module {
 
+
     &__partners {
         width: 100%;
         padding: $small-spacing $medium-spacing;
@@ -7,6 +8,14 @@
         overflow: hidden;
         box-sizing: border-box;
         background-color: $grey;
+
+        &.-state-first {
+            padding-top: $large-spacing;
+        }
+
+        &.-state-last {
+            padding-bottom: $large-spacing;
+        }
 
         @media screen and (max-width: $small-break) {
             padding: $small-spacing;
