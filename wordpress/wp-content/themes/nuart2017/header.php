@@ -9,6 +9,7 @@
  * @since Tortuga Labs - Nuart2017 1.0
  */
 
+$navigation_logo    = (get_field('navigation_logo', 'option') ? get_field('navigation_logo', 'option') : false);
 $social_preview = get_field('social_share_image', 'option');
 $facebook_link  = (get_field('facebook_link', 'option') ? get_field('facebook_link', 'option') : false);
 $twitter_link   = (get_field('twitter_link', 'option') ? get_field('twitter_link', 'option') : false);
@@ -37,6 +38,10 @@ $instagram_link = (get_field('instagram_link', 'option') ? get_field('instagram_
 <body <?php body_class(); ?>>
 
     <header id="main-header" class="site-header">
+
+        <? if($navigation_logo): ?>
+            <?= wp_get_attachment_image($navigation_logo, 'full', false, array('id' => 'header-logo', 'class' => 'site-header__logo-image')); ?>
+        <? endif; ?>
 
         <?
             wp_nav_menu(array(

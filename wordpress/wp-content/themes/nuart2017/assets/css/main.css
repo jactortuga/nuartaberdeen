@@ -436,6 +436,31 @@ table {
   margin-right: 2%;
 }
 
+.site-header__logo-image {
+  width: 120px;
+  height: 60px;
+  position: absolute;
+  top: 10px;
+  left: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .site-header__logo-image {
+    width: 84px;
+    height: 42px;
+    top: 19px;
+    left: 10px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .site-header__logo-image {
+    width: 70px;
+    height: 35px;
+    top: 22.5px;
+  }
+}
+
 .site-header__social-nav {
   width: 18%;
   height: 100%;
@@ -1875,7 +1900,7 @@ body a.-state-hover {
   padding: 16px 15px 13px 15px;
   position: absolute;
   top: 10px;
-  right: calc(10% - 15px);
+  right: 10px;
   display: none;
 }
 
@@ -1891,6 +1916,12 @@ body a.-state-hover {
 @media screen and (max-width: 950px) {
   .hamburger {
     display: block;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hamburger {
+    right: 0;
   }
 }
 
