@@ -16,6 +16,7 @@
         app.setup.bxSlider();
         app.setup.subMenuFix();
         app.setup.partnersModules();
+        app.setup.cleanForm();
         app.click.mobileMenu();
         app.click.mobileLinks();
         app.hovers.global();
@@ -41,7 +42,6 @@
     });
 
 
-    // App Functions
     var app = {
         lastScrollTop: 0,
         delta: 5,
@@ -89,6 +89,12 @@
                     $('.module__partners:last').addClass('-state-last');
                 }
             },
+
+            cleanForm : function() {
+                if($('.pirate_forms_thankyou_wrap').length) {
+                    $('.pirate_forms ').find('input[type=text], input[type=email], textarea').val('');
+                }
+            }
         },
 
         click : {
@@ -139,10 +145,10 @@
         hovers : {
             global : function() {
                 $('body')
-                    .on('mouseenter', 'a', function() {
+                    .on('mouseenter', 'a, .pirate-forms-submit-button', function() {
                         $(this).addClass('-state-hover');
                     })
-                    .on('mouseleave', 'a', function() {
+                    .on('mouseleave', 'a, .pirate-forms-submit-button', function() {
                         $(this).removeClass('-state-hover');
                     })
             },
@@ -226,7 +232,7 @@
                     scrollwheel: false,
                     styles: $('#map-info').data('style'),
                 });
-                app.map.infoWindow = new google.maps.InfoWindow({ maxWidth: 400 });
+                app.map.infoWindow = new google.maps.InfoWindow({ maxWidth: 250 });
                 app.map.infoWindow.addListener('closeclick', function() {
                     app.map.setZoom();
                 });

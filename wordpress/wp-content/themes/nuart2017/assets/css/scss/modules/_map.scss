@@ -10,11 +10,7 @@
     }
 
     &__map-box-title {
-        @include medium-text($black);
-
-        @media screen and (max-width: $medium-break) {
-            @include small-text($black);
-        }
+        @include small-text($black);
     }
 
     &__map-box-body {
