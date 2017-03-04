@@ -35,15 +35,19 @@
     $(window).resize(function() {
 
     });
-
-    $(document).on('scroll', function() {
+    
+    $(window).scroll(function(event){
         app.setup.menuScroll();
     });
 
 
     // App Functions
     var app = {
+        lastScrollTop: 0,
+        delta: 5,
+
         setup : {
+
             bxSlider : function() {
                 if($('.module__carousel-container').length) {
                     $('.module__carousel-container').each(function(index) {
@@ -65,11 +69,18 @@
             },
 
             menuScroll : function() {
-                if($(document).scrollTop() > 80) {
-                    $('#main-header').css('height', 10);
+                var st = $(window).scrollTop();
+                if(Math.abs(app.lastScrollTop - st) <= app.delta) {
+                    return;
+                }
+                if (st > app.lastScrollTop){
+                    if(st > 80) {
+                        $('#main-header').css('height', 10);
+                    }
                 } else {
                     $('#main-header').css('height', 80);
                 }
+                app.lastScrollTop = st;
             },
 
             partnersModules : function() {
