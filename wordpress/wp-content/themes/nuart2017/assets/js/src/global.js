@@ -19,6 +19,7 @@
         app.click.mobileMenu();
         app.click.mobileLinks();
         app.hovers.global();
+        app.hovers.artistsModuleHolding();
         app.hovers.artistsModule();
         app.hovers.postsModule();
 
@@ -135,7 +136,7 @@
                     })
             },
 
-            artistsModule : function() {
+            artistsModuleHolding : function() {
                 $('.module__repeater-item--artist')
                     .on('mouseenter', function() {
                         $(this).children('.module__repeater-item-image').velocity(
@@ -151,6 +152,28 @@
                             { opacity: 1 },
                             { begin: function() {
                                     $(this).siblings('.module__repeater-item-content').css('z-index', 0)
+                                }
+                            }
+                        );
+                    })
+            },
+
+            artistsModule : function() {
+                $('.module__artists-item')
+                    .on('mouseenter', function() {
+                        $(this).children('.module__artists-item-image').velocity(
+                            { opacity: 0 },
+                            { complete: function() {
+                                    $(this).siblings('.module__artists-item-content').css('z-index', 2)
+                                }
+                            }
+                        );
+                    })
+                    .on('mouseleave', function() {
+                        $(this).children('.module__artists-item-image').velocity(
+                            { opacity: 1 },
+                            { begin: function() {
+                                    $(this).siblings('.module__artists-item-content').css('z-index', 0)
                                 }
                             }
                         );
