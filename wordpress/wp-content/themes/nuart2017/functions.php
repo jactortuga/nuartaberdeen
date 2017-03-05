@@ -99,10 +99,12 @@ function tl_scripts() {
 
 	if(!is_admin())
     {
-    	$ver 		= '05032017A';
-    	$api_key 	= get_field('google_maps_api_key', 'option');
+    	$ver 			= '05032017A';
+    	$api_key 		= get_field('google_maps_api_key', 'option');
+    	$theme_color 	= get_field('theme_color_scheme', 'option');
 
     	wp_enqueue_style('tl-style', get_template_directory_uri() . '/assets/css/main.css', false, $ver);
+    	wp_enqueue_style('tl-style2', get_template_directory_uri() . '/assets/css/style.php?theme_color='.$theme_color, false, $ver);
 
 	 	wp_register_script('jquery', 'https://code.jquery.com/jquery-2.1.3.min.js', array(), null, true);
 		
