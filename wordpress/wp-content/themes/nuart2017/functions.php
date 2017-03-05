@@ -99,7 +99,7 @@ function tl_scripts() {
 
 	if(!is_admin())
     {
-    	$ver 		= '04032017D';
+    	$ver 		= '05032017A';
     	$api_key 	= get_field('google_maps_api_key', 'option');
 
     	wp_enqueue_style('tl-style', get_template_directory_uri() . '/assets/css/main.css', false, $ver);

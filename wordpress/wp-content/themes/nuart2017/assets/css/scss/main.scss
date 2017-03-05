@@ -29,6 +29,7 @@
 @import 'modules/contact';
 @import 'modules/divider';
 @import 'modules/map';
+@import 'modules/overlay';
 
 // Templates Stylesheets
 @import 'templates/holding';
@@ -39,6 +40,7 @@ body {
     background-color: $white;
     max-width: 1500px;
     margin: 0 auto;
+    overflow: hidden;
 
     a {
         text-decoration: none;

@@ -30,6 +30,7 @@
     });
 
     $(window).load(function(){
+        app.setup.hideOverlay();
         app.animations.subheaderLogo();
     })
 
@@ -93,6 +94,13 @@
             cleanForm : function() {
                 if($('.pirate_forms_thankyou_wrap').length) {
                     $('.pirate_forms ').find('input[type=text], input[type=email], textarea').val('');
+                }
+            },
+
+            hideOverlay : function() {
+                if($('#loading-overlay').length) {
+                    $('#loading-overlay').css('display', 'none');
+                    $('body').css('overflow', 'initial');
                 }
             }
         },

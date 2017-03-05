@@ -37,6 +37,10 @@ $instagram_link = (get_field('instagram_link', 'option') ? get_field('instagram_
 
 <body <?php body_class(); ?>>
 
+    <div id="loading-overlay" class="site-overlay">
+        <?= wp_get_attachment_image($navigation_logo, 'full', false, array('id' => 'header-logo', 'class' => 'site-overlay__logo-image')); ?>
+    </div>
+
     <header id="main-header" class="site-header">
 
         <? if($navigation_logo): ?>
