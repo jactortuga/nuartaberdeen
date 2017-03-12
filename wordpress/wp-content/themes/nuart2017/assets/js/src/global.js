@@ -19,6 +19,7 @@
         app.setup.cleanForm();
         app.click.mobileMenu();
         app.click.mobileLinks();
+        app.click.desktopLinks();
         app.hovers.global();
         app.hovers.artistsModuleHolding();
         app.hovers.artistsModule();
@@ -146,6 +147,20 @@
                             }
                         });
                     }
+                });
+            },
+
+            desktopLinks : function() {
+                $('body').on('click', '#full-nav .site-header__link', function(event) {
+                    if($(this).attr('href').indexOf('#') > -1 && window.location.href.indexOf($(this).attr('href').split('#')[0]) > -1 && window.location.pathname == '/') {
+                        event.preventDefault();
+                        var fullUrl         = this.href;
+                        var parts           = fullUrl.split('#');
+                        var target          = parts[1];
+                        var targetOffset    = $('#' + target).offset();
+                        var targetTop       = targetOffset.top;
+                        $('html, body').animate({scrollTop:targetTop}, 'slow');
+                    } 
                 });
             }
         },
