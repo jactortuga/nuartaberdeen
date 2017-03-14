@@ -7,7 +7,7 @@
         @include title-text($white);
 
         &--alt {
-            background-color: $white;
+            background-color: $white !important;
             @include title-text($purple);
         }
 

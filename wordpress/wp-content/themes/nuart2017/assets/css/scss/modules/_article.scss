@@ -102,6 +102,18 @@
             text-align: left;
         }
 
+        a {
+            color: $purple;
+        }
+
+        em {
+            @include italic-text($black, $small-font);
+        }
+
+        strong {
+            @include bold-text($black, $small-font);
+        }
+
         @media screen and (max-width: $smallest-break) {
             font-size: $tiny-font;
         }

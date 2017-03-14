@@ -99,7 +99,7 @@ function tl_scripts() {
 
 	if(!is_admin())
     {
-    	$ver 			= '12032017D';
+    	$ver 			= '14032017E';
     	$api_key 		= get_field('google_maps_api_key', 'option');
     	$theme_color 	= get_field('theme_color_scheme', 'option');
 

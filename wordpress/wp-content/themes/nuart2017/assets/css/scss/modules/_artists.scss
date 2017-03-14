@@ -33,6 +33,7 @@
         width: 100%;
         height: auto;
         position: relative;
+        display: block;
         z-index: 1;
     }
 
@@ -72,3 +73,6 @@
         }
     }
 }
+
+// FIREFOX HACK
+_:-moz-tree-row(hover), .module__artists-item  { height: auto; }

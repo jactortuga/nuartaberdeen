@@ -39,3 +39,10 @@
     line-height: 1.2;
     color: $color;
 }
+
+@mixin bold-text($color, $font-size) {
+    font-family: 'NeueHaasUnicaPro-Bold', Helvetica, Arial, sans-serif;
+    font-size: $font-size;
+    line-height: 1.2;
+    color: $color;
+}

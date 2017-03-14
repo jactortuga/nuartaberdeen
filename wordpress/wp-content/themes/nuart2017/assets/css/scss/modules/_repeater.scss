@@ -112,6 +112,7 @@
 
     &__repeater-item-image {
         position: relative;
+        display: block;
         z-index: 1;
 
         &--artist {
@@ -164,3 +165,6 @@
         }
     }
 }
+
+// FIREFOX HACK
+_:-moz-tree-row(hover), .module__repeater-item--artist  { height: auto; }

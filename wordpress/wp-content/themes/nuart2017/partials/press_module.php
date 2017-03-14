@@ -37,7 +37,7 @@ $module_press_list  = wp_get_recent_posts($args);
                     <p class="module__posts-item-date"><?= $module_press_date ?></p>
                 </div>
                 <div class="module__posts-item-overlay">
-                    <a href="<?= $module_press_link ?>" class="module__posts-item-link">Read More</a>
+                    <a href="<?= $module_press_link ?>" class="module__posts-item-link"><span class="module__posts-item-span">Read More</span></a>
                 </div>
             </div>
         <? endforeach; ?>

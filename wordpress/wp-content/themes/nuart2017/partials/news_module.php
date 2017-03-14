@@ -38,7 +38,7 @@ $module_news_list   = wp_get_recent_posts($args);
                     <? endif; ?>
                 </div>
                 <div class="module__posts-item-overlay">
-                    <a href="<?= $module_news_link ?>" class="module__posts-item-link">Read More</a>
+                    <a href="<?= $module_news_link ?>" class="module__posts-item-link"><span class="module__posts-item-span">Read More</span></a>
                 </div>
             </div>
         <? endforeach; ?>
