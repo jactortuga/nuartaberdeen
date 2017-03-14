@@ -51,7 +51,7 @@ get_header(); ?>
     </article>
 </div>
 
-<div class="module">
+<div id="artists" class="module">
     <h1 class="module__title module__title--single">Artists</h1>
     <section class="module__repeater module__repeater--artists">
         <? if(have_rows('artists')): ?>

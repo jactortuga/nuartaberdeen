@@ -19,7 +19,7 @@ wp_footer(); ?>
 
     </main>
 
-    <footer class="site-footer">
+    <footer id="footer" class="site-footer">
         <h1 class="site-footer__title"><?= $footer_title ?></h1>
 
         <? if($footer_content_left || $footer_content_right): ?>
