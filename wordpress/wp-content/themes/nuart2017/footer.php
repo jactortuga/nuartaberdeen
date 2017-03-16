@@ -44,7 +44,6 @@ wp_footer(); ?>
                 </a>                
             </nav>
         <? endif; ?>
-
     </footer>
 
     <section class="site-credits">
