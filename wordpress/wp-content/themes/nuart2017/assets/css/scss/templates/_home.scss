@@ -1,4 +1,4 @@
-body:not(.page-template-home) {
+body:not(.page-template-home):not(.page-template-holding) {
     .site-footer {
         padding: $medium-spacing 0;
 
