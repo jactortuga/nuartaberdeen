@@ -353,3 +353,19 @@ class Tortuga_Custom_Nav_Menu extends Walker_Nav_Menu {
         $output .= '</a>';
     }
 }
+
+
+// ADD CLASS TO CUSTOM POST TYPE NAVIGATION LINKS
+add_filter('previous_post_link', 'prev_post_link_attributes');
+
+function prev_post_link_attributes($output) {
+    $code = 'class="module__artist-pagination-link module__artist-pagination-link--prev"';
+    return str_replace('<a href=', '<a '.$code.' href=', $output);
+}
+
+add_filter('next_post_link', 'next_post_link_attributes');
+
+function next_post_link_attributes($output) {
+    $code = 'class="module__artist-pagination-link module__artist-pagination-link--next"';
+    return str_replace('<a href=', '<a '.$code.' href=', $output);
+}

@@ -15,6 +15,7 @@ $artist_video     = (get_field('artist_video') ? get_field('artist_video') : fal
 
 get_header(); ?>
 
+<? if(have_posts()) : while(have_posts()) : the_post(); ?>
 
 <div class="module">
     <section class="module__carousel-container">
@@ -49,5 +50,21 @@ get_header(); ?>
     </div>
 <? endif; ?>
 
+<div class="module">
+    <div class="module__artist-pagination">
+        <div class="module__artist-pagination-container">
+            <? if(previous_post_link('%link', 'Previous<span class="module__artist-pagination-span"> Artist</span>')): ?>
+                <?= previous_post_link('%link', 'Previous Artist') ?>
+            <? endif; ?>
+        </div>
+        <div class="module__artist-pagination-container">
+            <? if(next_post_link('%link', 'Next<span class="module__artist-pagination-span"> Artist</span>')): ?>
+                <?= next_post_link('%link', 'Next <span class="module__artist-pagination-span">Artist</span>') ?>
+            <? endif; ?>
+        </div>
+    </div>
+</div>
+
+<? endwhile; endif; ?>
 
 <? get_footer(); ?>

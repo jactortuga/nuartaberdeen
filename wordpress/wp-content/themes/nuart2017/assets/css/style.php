@@ -125,8 +125,8 @@ $theme = $_GET['theme_color'];
   background-color: #<?= $theme  ?>;
 }
 
-body {
-  background-color: #<?= $theme  ?>;
+.module__artist-pagination-link {
+  color: #<?= $theme  ?>;
 }
 
 .site-main {
