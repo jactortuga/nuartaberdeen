@@ -9,180 +9,98 @@
         flex-direction: row;
         flex-wrap: no-wrap;
         justify-content: center;
+
+        @media screen and (max-width: $small-break) {
+            padding: $small-spacing 0;
+            flex-direction: column;
+        }
     }
 
     &__newsletter-information {
         width: 25%;
+        margin: 0 $medium-spacing 0 0;
         @include small-text($white);
+
+        @media screen and (max-width: $small-break) {
+            width: 90%;
+            margin: 0 auto $small-spacing auto;
+            font-size: 18px;
+        }
     }
 
     &__newsletter-input-container {
-        background-color: gold;
-        height: 40px;
+        width: 370px;
+        height: 48px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: no-wrap;
+
+        @media screen and (max-width: $small-break) {
+            width: 290px;
+            height: 36px;
+            margin: 0 auto;
+        }
     }
 
     &__newsletter-input-email {
+        width: 250px;
+        height: 100%;
+        padding: 10px 20px;
+        box-sizing: border-box;
         border: 2px solid $white;
-        height: 40px;
+        @include small-text($black);
+        
 
+        &:focus {
+            outline: none;
+        }
+
+        @media screen and (max-width: $small-break) {
+            width: 170px;
+            padding: 5px;
+            font-size: 18px;
+        }
     }
 
     &__newsletter-input-submit {
+        width: 120px;
+        height: 100%;
+        padding: 0 $tiny-spacing $tiny-spacing $tiny-spacing;
         border: 2px solid $white;
         border-radius: 0;
         background-color: $purple;
+        cursor: pointer;
         @include subtitle-text($white);
+        line-height: 1;
+        
+        &:focus {
+            outline: none;
+        }
+
+        &:hover {
+            text-decoration: underline;
+        }
+
+        @media screen and (max-width: $small-break) {
+            &:hover {
+                text-decoration: none;
+            }
+        }
     }
-        // @media screen and (max-width: $medium-break) {
-        //     padding: $medium-spacing 0;
-        // }
 
-        // @media screen and (max-width: $small-break) {
-        //     width: 90%;
-        //     margin: 0 auto;
-        // }
+    .mc4wp-form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 
-        // .pirate_forms_wrap {
-        //     float: none;
-        // }
+    .mc4wp-response {
+        width: 90%;
+        margin: $small-spacing auto 0 auto;
+        @include small-text($white);
 
-        // .pirate_forms_thankyou_wrap {
-        //     font-size: $small-font;
-        //     margin-bottom: $medium-spacing;
-        // }
-
-        // .pirate_forms_error_box {
-        //     &:first-of-type {
-        //         font-size: $small-font;
-        //         margin-bottom: $tiny-spacing;
-        //     }
-
-        //     &:nth-last-of-type(2) {
-        //         margin-bottom: $medium-spacing;
-        //     }
-        // }
-
-        // .contact_name_wrap,
-        // .contact_email_wrap,
-        // .contact_subject_wrap {
-
-        //     input {
-        //         width: 400px;
-        //         height: $medium-spacing;
-        //         border: 2px solid $purple;
-        //         text-align: center;
-        //         padding: 0;
-        //         position: relative;
-        //         @include medium-text($purple);
-        //         line-height: 1.6;
-
-        //         @media screen and (max-width: $small-break) {
-        //             width: 280px;
-        //         }
-
-        //         &:focus {
-        //             outline-color: $purple;
-        //         }
-
-        //         &::-webkit-input-placeholder {
-        //             color: $dark-grey;
-        //         }
-
-        //         &::-moz-placeholder {
-        //             color: $dark-grey;
-        //         }
-
-        //         &:-ms-input-placeholder {
-        //             color: $dark-grey;
-        //         }
-
-        //     }
-        // }
-
-        // .contact_message_wrap {
-        //     textarea {
-        //         width: 400px;
-        //         height: 150px;
-        //         border: 2px solid $purple;
-        //         position: relative;
-        //         @include small-text($purple);
-
-        //         @media screen and (max-width: $small-break) {
-        //             width: 280px;
-        //         }
-
-        //         &:focus {
-        //             outline-color: $purple;
-        //         }
-
-        //         &::-webkit-input-placeholder {
-        //             position: relative;
-        //             top: 45%;
-        //             left: 0;
-        //             transform: translateY(-45%);
-        //             text-align: center;
-        //             @include medium-text($dark-grey);
-        //         }
-                
-        //         &::-moz-placeholder {
-        //             position: relative;
-        //             top: 45%;
-        //             left: 0;
-        //             transform: translateY(-45%);
-        //             text-align: center;
-        //             @include medium-text($dark-grey);
-        //         }
-
-        //         &:-ms-input-placeholder {
-        //             position: relative;
-        //             top: 45%;
-        //             left: 0;
-        //             transform: translateY(-45%);
-        //             text-align: center;
-        //             @include medium-text($dark-grey);
-        //         }
-        //     }
-        // }
-
-        // .form_captcha_wrap {
-        //     width: 304px;
-        //     margin: 0 auto;
-
-        //     @media screen and (max-width: $small-break) {
-        //         width: 280px;
-
-        //         #rc-imageselect,
-        //         .g-recaptcha {
-        //             transform:scale(0.922);
-        //             transform-origin:0 0;
-        //         }
-        //     }
-        // }
-
-        // .contact_submit_wrap {
-        //     width: 140px;
-        //     margin: 40px auto 0 auto;
-
-        //     .pirate-forms-submit-button {
-        //         width: 100%;
-        //         height: $medium-spacing;
-        //         background-color: $purple;
-        //         @include medium-text($white);
-        //         cursor: pointer;
-        //         border: 2px solid $white;
-        //         padding: 5px;
-        //         box-sizing: content-box;
-        //         transition: background-color 0.25s linear, color 0.25s linear;
-
-        //         &:focus {
-        //             outline: purple;
-        //         }
-
-        //         &.-state-hover {
-        //             background-color: $white;
-        //             border: 2px solid $purple;
-        //             @include medium-text($purple);
-        //         }
-        //     }
-        // }
+        @media screen and (max-width: $small-break) {
+            font-size: 18px;
+        }
+    }
 }

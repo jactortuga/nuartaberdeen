@@ -8,6 +8,6 @@ $module_information = get_sub_field('module_information');
     <h1 class="module__title module__title--single">Newsletter</h1>
     <section class="module__newsletter">
         <p class="module__newsletter-information"><?= $module_information ?></p>
-        <?= do_shortcode('[mc4wp_form id="330"]'); ?>
+        <?= do_shortcode('[mc4wp_form id="594"]'); ?>
     </section>
 </div>

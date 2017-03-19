@@ -136,3 +136,11 @@ $theme = $_GET['theme_color'];
 .site-main {
   background-color: #<?= $theme  ?>;
 }
+
+.module__newsletter {
+  background-color: #<?= $theme  ?>;
+}
+
+.module__newsletter-input-submit {
+  background-color: #<?= $theme  ?>;
+}
