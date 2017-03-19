@@ -42,6 +42,10 @@ $theme = $_GET['theme_color'];
   background-color: #<?= $theme  ?>;
 }
 
+.module__title-link {
+  color: #<?= $theme  ?>;
+}
+
 .module__article-container--double:first-of-type {
   background-color: #<?= $theme  ?>;
 }

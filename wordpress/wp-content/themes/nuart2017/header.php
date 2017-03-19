@@ -48,7 +48,7 @@ $instagram_link     = (get_field('instagram_link', 'option') ? get_field('instag
     <header id="main-header" class="site-header">
 
         <? if($navigation_logo): ?>
-            <?= wp_get_attachment_image($navigation_logo, 'full', false, array('id' => 'header-logo', 'class' => 'site-header__logo-image')); ?>
+            <a href="/"><?= wp_get_attachment_image($navigation_logo, 'full', false, array('id' => 'header-logo', 'class' => 'site-header__logo-image')); ?></a>
         <? endif; ?>
 
         <?

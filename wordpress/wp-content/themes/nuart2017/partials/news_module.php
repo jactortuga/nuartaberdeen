@@ -17,7 +17,9 @@ $module_news_list   = wp_get_recent_posts($args);
 
 
 <div class="module">
-    <h1 class="module__title module__title--single module__title--alt"><?= $module_title ?></h1>
+    <h1 class="module__title module__title--single module__title--alt">
+        <a class="module__title-link" href="/news/"><?= $module_title ?></a>
+    </h1>
     <section class="module__posts">
         <? foreach($module_news_list as $module_news):
         $module_news_id     = $module_news['ID'];

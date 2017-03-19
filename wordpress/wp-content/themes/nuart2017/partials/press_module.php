@@ -16,7 +16,9 @@ $module_press_list  = wp_get_recent_posts($args);
 ?>
 
 <div class="module">
-    <h1 class="module__title module__title--single module__title--alt"><?= $module_title ?></h1>
+    <h1 class="module__title module__title--single module__title--alt">
+        <a class="module__title-link" href="/press/"><?= $module_title ?></a>
+    </h1>
     <section class="module__posts">
         <? foreach($module_press_list as $module_press):
         $module_press_id     = $module_press['ID'];

@@ -161,5 +161,9 @@
         justify-content: center;
         text-transform: uppercase;
         @include medium-text($white);
+
+        &.-state-hover {
+            text-decoration: none !important;
+        }
     }
 }
