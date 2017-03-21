@@ -160,6 +160,10 @@ function hide_page_content_editor() {
         remove_post_type_support('page', 'editor');
     }
 
+    if(get_the_title($post_id) == 'Press Material') { 
+        remove_post_type_support('page', 'editor');
+    }
+
     // Hide the editor on a page with a specific page template
     // Get the name of the Page Template file.
     // $template_file = get_post_meta($post_id, '_wp_page_template', true);
