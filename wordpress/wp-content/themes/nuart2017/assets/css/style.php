@@ -156,3 +156,7 @@ $theme = $_GET['theme_color'];
 .module__downloads-link.-state-hover {
     color: #<?= $theme ?>;
 }
+
+.module__post-pagination-link {
+    color: #<?= $theme ?>;
+}
