@@ -14,12 +14,17 @@
         &--single {
             width: 100%;
 
+            @media screen and (max-width: 800px) {
+                font-size: 34px;
+                line-height: 2;
+            }
+
             @media screen and (max-width: $small-break) {
                 font-size: $medium-font;
                 line-height: 2.8;
             }
 
-            @media screen and (max-width: $smallest-break) {
+            @media screen and (max-width: 400px) {
                 font-size: $small-font;
                 line-height: 3.6;
             }

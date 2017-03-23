@@ -85,23 +85,20 @@
     }
 
     &__posts-item-intro {
+        padding-top: $small-spacing;
+        font-size: $tiny-font;
+        @include small-text($white);
 
-        &--news {
-            padding-top: $small-spacing;
-            font-size: $tiny-font;
-            @include small-text($white);
+        @media screen and (max-width: $large-break) {
+            display: none;
+        }
 
-            @media screen and (max-width: $large-break) {
-                display: none;
-            }
+        @media screen and (max-width: $medium-break) {
+            display: initial;
+        }
 
-            @media screen and (max-width: $medium-break) {
-                display: initial;
-            }
-
-            @media screen and (max-width: $small-break) {
-                display: none;
-            }
+        @media screen and (max-width: $small-break) {
+            display: none;
         }
 
         &--press {

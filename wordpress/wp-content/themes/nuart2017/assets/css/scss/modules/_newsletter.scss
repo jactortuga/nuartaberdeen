@@ -49,7 +49,8 @@
         box-sizing: border-box;
         border: 2px solid $white;
         @include small-text($black);
-        
+        -webkit-appearance: none;
+        border-radius: 0;
 
         &:focus {
             outline: none;
@@ -72,6 +73,7 @@
         cursor: pointer;
         @include subtitle-text($white);
         line-height: 1;
+        -webkit-appearance: none;
         
         &:focus {
             outline: none;
@@ -92,15 +94,26 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
+        position: relative;
     }
 
     .mc4wp-response {
         width: 90%;
-        margin: $small-spacing auto 0 auto;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: 55px auto 0 auto;
         @include small-text($white);
 
         @media screen and (max-width: $small-break) {
             font-size: 18px;
+            margin: $small-spacing auto 0 auto;
+            position: static;
+            left: auto;
+            right: auto;
         }
     }
 }
+
+// SAFARI 9+ HACK
+_::-webkit-:not(:root:root), .module__newsletter-input-email::-webkit-input-placeholder { line-height: 1.5; }
