@@ -217,6 +217,32 @@ function customize_styles($settings) {
                     'exact'     => true,
                 )
             )
+        ),
+        array( 
+            'title' => 'Paragraph Alignment',
+            'items' => array(
+                array(  
+                    'title'     => 'Left',  
+                    'block'     => 'p',  
+                    'classes'   => '-left',
+                    'wrapper'   => false,
+                    'exact'     => true,
+                ),
+                array(  
+                    'title'     => 'Center',  
+                    'block'     => 'p',  
+                    'classes'   => '-center',
+                    'wrapper'   => false,
+                    'exact'     => true,
+                ),
+                array(  
+                    'title'     => 'Right',  
+                    'block'     => 'p',  
+                    'classes'   => '-right',
+                    'wrapper'   => false,
+                    'exact'     => true,
+                )
+            )
         ),   
     );
 

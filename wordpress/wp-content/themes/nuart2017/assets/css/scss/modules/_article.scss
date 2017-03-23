@@ -115,6 +115,128 @@
             @include bold-text($black, $small-font);
         }
 
+        // Paragraph Variants
+        p.-left {
+            text-align: left;
+        }
+
+        p.-center {
+            text-align: center;
+        }
+
+        p.-right {
+            text-align: right;
+        }
+
+
+        p.-large {
+            @include large-text($black);
+
+            em {
+                @include italic-text($black, $large-font);
+            }
+
+            strong {
+                @include bold-text($black, $large-font);
+            }
+
+            @media screen and (max-width: $medium-break) {
+                font-size: $medium-font;
+
+                em {
+                    @include italic-text($black, $medium-font);
+                }
+
+                strong {
+                    @include bold-text($black, $medium-font);
+                }
+            }
+
+            @media screen and (max-width: $smallest-break) {
+                font-size: $small-font;
+
+                em {
+                    @include italic-text($black, $small-font);
+                }
+
+                strong {
+                    @include bold-text($black, $small-font);
+                }
+            }
+        }
+
+        p.-medium {
+            @include medium-text($black);
+
+            em {
+                @include italic-text($black, $medium-font);
+            }
+
+            strong {
+                @include bold-text($black, $medium-font);
+            }
+
+            @media screen and (max-width: $medium-break) {
+                font-size: $small-font;
+
+                em {
+                    @include italic-text($black, $small-font);
+                }
+
+                strong {
+                    @include bold-text($black, $small-font);
+                }
+            }
+
+            @media screen and (max-width: $smallest-break) {
+                font-size: $tiny-font;
+
+                em {
+                    @include italic-text($black, $tiny-font);
+                }
+
+                strong {
+                    @include bold-text($black, $tiny-font);
+                }
+            }
+        }
+
+        p.-small {
+            @include small-text($black);
+
+            em {
+                @include italic-text($black, $small-font);
+            }
+
+            strong {
+                @include bold-text($black, $small-font);
+            }
+
+            @media screen and (max-width: $medium-break) {
+                font-size: $tiny-font;
+
+                em {
+                    @include italic-text($black, $tiny-font);
+                }
+
+                strong {
+                    @include bold-text($black, $tiny-font);
+                }
+            }
+
+            @media screen and (max-width: $smallest-break) {
+                font-size: $smallest-font;
+
+                em {
+                    @include italic-text($black, $smallest-font);
+                }
+
+                strong {
+                    @include bold-text($black, $smallest-font);
+                }
+            }
+        }
+
         @media screen and (max-width: $smallest-break) {
             font-size: $tiny-font;
         }
@@ -149,9 +271,3 @@
         }
     }
 }
-
-
-
-// .module_
-
-// .module .module__article--
