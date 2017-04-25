@@ -3,6 +3,7 @@
     padding: $large-spacing 0;
     margin-bottom: 30px;
     background-color: $purple;
+    overflow: hidden;
 
     @media screen and (max-width: $medium-break) {
         padding: $medium-spacing 0;

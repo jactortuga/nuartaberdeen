@@ -44,7 +44,7 @@ body {
     background-color: $white;
     max-width: 1500px;
     margin: 0 auto;
-    overflow: hidden;
+    overflow-y: hidden;
 
     a {
         text-decoration: none;
@@ -101,6 +101,12 @@ body {
 
 
 .bx-wrapper {
+
+    .bx-viewport .module__carousel-slide { 
+        min-height: 1px; 
+        min-width: 1px; 
+    }
+
     .bx-viewport {
         left: 0;
         border: none;

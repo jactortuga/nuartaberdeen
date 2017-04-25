@@ -101,7 +101,11 @@
             hideOverlay : function() {
                 if($('#loading-overlay').length) {
                     $('#loading-overlay').css('display', 'none');
-                    $('body').css('overflow', 'initial');
+                    if(navigator.userAgent.indexOf('MSIE')!==-1 || navigator.appVersion.indexOf('Trident/') > 0){
+                       $('body').css('overflow-y', 'scroll');
+                    } else {
+                        $('body').css('overflow-y', 'auto');
+                    }
                 }
             }
         },
@@ -114,7 +118,7 @@
                         $('#mobile-nav').velocity('fadeOut', {
                             duration: 500,
                             complete: function() {
-                                $('body').css('overflow', 'initial');
+                                $('body').css('overflow-y', 'initial');
                                 $('body').css('position', 'initial');
                                 $('#main-header').css('overflow', 'hidden');
                             }
@@ -125,7 +129,7 @@
                             duration: 500,
                             display: 'flex',
                             begin: function() {
-                                $('body').css('overflow', 'hidden');
+                                $('body').css('overflow-y', 'hidden');
                                 $('body').css('position', 'fixed');
                                 $('#main-header').css('overflow', 'initial');
                             }
@@ -141,9 +145,9 @@
                         $('#mobile-nav').velocity('fadeOut', {
                             duration: 500,
                             begin: function() {
-                                    $('body').css('overflow', 'initial');
+                                    $('body').css('overflow-y', 'initial');
                                     $('body').css('position', 'initial');
-                                    $('#main-header').css('overflow', 'hidden');
+                                    $('#main-header').css('overflow-y', 'hidden');
                             }
                         });
                     }
